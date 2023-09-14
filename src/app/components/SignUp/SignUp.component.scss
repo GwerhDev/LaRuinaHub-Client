@@ -1,0 +1,27 @@
+.form-container {
+  padding: 3rem;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: solid;
+  border-radius: 5px;
+}
+
+.ul-form {
+  padding: 0;
+}
+
+.li-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+input:active, input:hover, input:focus-visible {
+  border-color: var(--primary-color);
+}

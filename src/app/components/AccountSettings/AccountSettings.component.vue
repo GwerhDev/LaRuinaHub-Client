@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { storeToRefs } from 'pinia';
 import { useStore } from '../../../middlewares/store/index'; 
 
 const store: any = useStore(); 

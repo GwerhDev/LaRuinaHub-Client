@@ -17,11 +17,13 @@ export const useStore = defineStore('store', {
     },
     async handleRegister(data: any) {
       const userToken = await signupInner(data);
+      localStorage.setItem('userToken', userToken);
       const url = '/account/settings/' + userToken;
       return url;
     },
     async handleLogin(data: any) {
       const userToken = await loginInner(data);
+      localStorage.setItem('userToken', userToken);
       const url = '/account/settings/' + userToken;
       return url;
     },

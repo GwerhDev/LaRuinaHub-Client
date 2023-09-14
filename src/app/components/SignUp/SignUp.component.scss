@@ -40,3 +40,22 @@ input:active, input:hover, input:focus-visible {
   border-radius: 5px;
   color: black;
 }
+.separator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+.separator {
+  width: 100%;
+  background-color: white;
+  height: 1px;
+  position: relative;
+}
+
+.o-separator {
+  position: absolute;
+  background-color: var(--primary-background-color);
+  padding-left: 10px;
+  padding-right: 10px;
+}

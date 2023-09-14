@@ -20,9 +20,13 @@
         <label>Contraseña</label>
         <input class="input-form" type="password" />
       </li>
-      <button class="submit-button">SignUp</button>
+      <button class="submit-button">Registrarse</button>
     </form>
-    <p>O puedes crear una cuenta mediante:</p>
+    <div class="separator-container">
+      <div class="separator"></div>
+      <span class="o-separator">0</span>
+    </div>
+    <p>puedes crear una cuenta mediante:</p>
     <a href="https://laruinahub-api.fly.dev/signup-google">
       <div class="google-button">
         Google

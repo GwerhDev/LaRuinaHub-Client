@@ -10,10 +10,10 @@ const token = route.params.token;
 store.handleUserData(token);
 
 const currentUser: any = computed(() => store.currentUser);
-let id: string = computed(() => currentUser.value.userData?.id);
-let email: string = computed(() => currentUser.value.userData?.email);
-let username: string = computed(() => currentUser.value.userData?.username);
-let profilePic: string = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);
+let id: any = computed(() => currentUser.value.userData?.id);
+let email: any = computed(() => currentUser.value.userData?.email);
+let username: any = computed(() => currentUser.value.userData?.username);
+let profilePic: any = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);
 
 const editActive: any = ref(false);
 const showSaveCancelButtons: any = computed(() => editActive.value);

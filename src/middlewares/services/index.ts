@@ -16,7 +16,7 @@ export const signupInner: any = async (formData: any) => {
   return response;
 }
 
-export const getUserData: any = async (token: string) => {
+export const getUserData: any = async (token: any) => {
   const response: any = await axios.get(API_URL + "/auth", { headers: { Authorization: token }})
                                    .then(response => response.data)
                                    .catch(() => { return { error: error.api.loadItemById } });

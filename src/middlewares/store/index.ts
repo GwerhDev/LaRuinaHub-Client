@@ -16,7 +16,7 @@ export const useStore = defineStore('store', {
       const url = '/account/settings/' + userToken;
       return url;
     },
-    async handleUserData(token: string) {
+    async handleUserData(token: any) {
       this.currentUser = await getUserData(token);
     },
     async handleUpdateUserData(formData: any, id: any, token: any) {

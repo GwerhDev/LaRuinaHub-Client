@@ -2,8 +2,8 @@
   import NavBar from './app/components/NavBar/NavBar.component.vue'; 
   import { useStore } from './middlewares/store/index';
 
-  const store = useStore();
-  const token = localStorage.getItem('userToken');
+  const store: any = useStore();
+  const token: any = localStorage.getItem('userToken');
   store.handleUserData(token);
 </script> 
  

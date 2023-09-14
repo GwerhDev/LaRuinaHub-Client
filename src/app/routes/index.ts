@@ -1,6 +1,6 @@
 import { RouteRecordRaw, createRouter, createWebHashHistory } from 'vue-router';
 import LandingPage from '../pages/LandingPage.vue';
-import LoginPage from '../pages/loginPage.vue';
+import LoginPage from '../pages/LoginPage.vue';
 import RegisterPage from '../pages/RegisterPage.vue';
 import AccountPage from '../pages/AccountPage.vue';
 

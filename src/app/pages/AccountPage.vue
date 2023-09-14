@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <main class="main-container-landing">
-    <div class="container-landing">
+  <main class="main-container">
+    <div class="container">
       <AccountSettings/>
     </div>
   </main>

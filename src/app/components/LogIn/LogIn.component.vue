@@ -5,16 +5,15 @@
 
   const store: any = useStore(); 
   const router: any = useRouter();
-  const apiUrl: string = API_URL + "/signup-google";
-  let username = "";
+  const apiUrl: string = API_URL + "/login-google";
   let email = "";
   let password = "";
 
-  async function handleRegister(e: any) {
+  async function handleLogin(e: any) {
     e.preventDefault();
-    const formData: any = { username, email, password };
+    const formData: any = { email, password };
     try {
-      const path: any = await store.handleRegister(formData);
+      const path: any = await store.handleLogin(formData);
       router.push(path);
     } catch (error) {
       console.error(error)
@@ -31,10 +30,6 @@
     <p>Rellena los siguientes campos:</p>
     <form class="ul-form">
       <li class="li-form">
-        <label>Nombre de usuario</label>
-        <input v-model="username" class="input-form" type="text" />
-      </li>
-      <li class="li-form">
         <label>Correo electrónico</label>
         <input v-model="email" class="input-form" type="email" />
       </li>
@@ -42,13 +37,13 @@
         <label>Contraseña</label>
         <input v-model="password" class="input-form" type="password" />
       </li>
-      <button class="submit-button" @click="handleRegister">Registrarse</button>
+      <button class="submit-button" @click="handleLogin">Iniciar Sesión</button>
     </form>
     <div class="separator-container">
       <div class="separator"></div>
       <span class="o-separator">0</span>
     </div>
-    <p>puedes crear una cuenta mediante:</p>
+    <p>puedes iniciar sesión mediante:</p>
     <a :href="apiUrl">
       <div class="google-button">
         Google
@@ -57,5 +52,5 @@
   </div>
 </template>
 
-<style scoped lang="scss" src="./SignUp.component.scss">
+<style scoped lang="scss" src="./LogIn.component.scss">
 </style>

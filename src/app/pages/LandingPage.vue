@@ -1,13 +1,11 @@
 <script setup lang="ts">
-  import EnterButton from '../components/Buttons/Enter/EnterButton.component.vue';
   import Presentation from '../components/Presentation/Presentation.component.vue'
 </script>
 
 <template>
-  <main class="main-container-landing">
-    <div class="container-landing">
+  <main class="main-container">
+    <div class="container">
       <Presentation/>
-      <EnterButton/>
     </div>
   </main>
 </template>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import SignUp from '../components/SignUp/SignUp.component.vue';
+  import LogIn from '../components/LogIn/LogIn.component.vue';
 </script>
 
 <template>
   <main class="main-container">
     <div class="container">
-      <SignUp/>
+      <LogIn/>
     </div>
   </main>
 </template>

@@ -150,6 +150,8 @@ a:hover {
   background-color: var(--primary-background-color);
   display: flex;
   justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .main-container-landing {

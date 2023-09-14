@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { getUserData, signupInner, updateUserData } from '../services';
+import { getUserData, loginInner, signupInner, updateUserData } from '../services';
 
 interface storeState {
   currentUser: any,
@@ -11,8 +11,17 @@ export const useStore = defineStore('store', {
   }),
 
   actions: {
-    async handleUserToken(data: any) {
+    logout() {
+      localStorage.clear();
+      this.currentUser = {};
+    },
+    async handleRegister(data: any) {
       const userToken = await signupInner(data);
+      const url = '/account/settings/' + userToken;
+      return url;
+    },
+    async handleLogin(data: any) {
+      const userToken = await loginInner(data);
       const url = '/account/settings/' + userToken;
       return url;
     },

@@ -4,9 +4,9 @@ import { useRoute } from 'vue-router';
 import { useStore } from '../../../middlewares/store/index';
 import defaultImage from '../../../assets/png/user-icon.png';
 
-const store = useStore();
-const route = useRoute();
-const token = route.params.token;
+const store: any = useStore();
+const route: any = useRoute();
+const token: any = route.params.token;
 store.handleUserData(token);
 localStorage.setItem('userToken', token);
 
@@ -41,11 +41,11 @@ async function handleUpdate(e: any) {
 }
 
 function handleFileUpload(e:any) {
-  const file = e.target.files[0];
-  const reader = new FileReader();
-  reader.onloadend = (e) => {
-    const pic = e.target.result;
-    const imageSrc = pic;
+  const file: any = e.target.files[0];
+  const reader: any = new FileReader();
+  reader.onloadend = (e: any) => {
+    const pic: any = e.target.result;
+    const imageSrc: any = pic;
     profilePic = imageSrc;
   }
   reader.readAsDataURL(file);

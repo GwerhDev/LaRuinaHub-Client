@@ -253,11 +253,13 @@ ul {
   flex-direction: column;
 }
 
-.logo {
+.logo,
+.profile-pic {
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
+.logo:hover 
+.profile-pic{
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 
@@ -297,7 +299,8 @@ input[type="text"] {
   border-radius: 5px;
 }
 
-.logo-container {
+.logo-container,
+.profile-pic-container {
   display: flex;
   justify-content: space-evenly;
 }

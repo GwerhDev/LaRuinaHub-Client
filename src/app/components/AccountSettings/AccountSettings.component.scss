@@ -1,0 +1,61 @@
+.form-container {
+  padding: 3rem;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: solid;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.ul-form {
+  padding: 0;
+}
+
+.li-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-form {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+input:active, input:hover, input:focus-visible {
+  border-color: var(--primary-color);
+}
+
+.submit-button {
+  width: 100%;
+}
+
+.google-button {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  padding: .7rem;
+  border-radius: 5px;
+  color: black;
+}
+.separator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+.separator {
+  width: 100%;
+  background-color: white;
+  height: 1px;
+  position: relative;
+}
+
+.o-separator {
+  position: absolute;
+  background-color: var(--primary-background-color);
+  padding-left: 10px;
+  padding-right: 10px;
+}

@@ -1,6 +1,7 @@
 import { RouteRecordRaw, createRouter, createWebHashHistory } from 'vue-router';
 import LandingPage from '../pages/LandingPage.vue';
 import RegisterPage from '../pages/RegisterPage.vue';
+import AccountPage from '../pages/AccountPage.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -12,6 +13,11 @@ const routes: RouteRecordRaw[] = [
     path: '/register',
     name: 'RegisterPage',
     component: RegisterPage
+  },
+  {
+    path: '/account/settings/:token',
+    name: 'AccountPage',
+    component: AccountPage
   },
 ]
 

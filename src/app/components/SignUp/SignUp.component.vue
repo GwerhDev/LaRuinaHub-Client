@@ -1,4 +1,26 @@
 <script setup lang="ts">
+  import { API_URL } from '../../../middlewares/misc/const';
+  import { useStore } from '../../../middlewares/store/index'; 
+  import { useRouter } from 'vue-router';
+
+  const store: any = useStore(); 
+  const router: any = useRouter();
+  const apiUrl: string = API_URL + "/signup-google";
+  let username = "";
+  let email = "";
+  let password = "";
+
+  async function handleRegister(e: any) {
+    e.preventDefault();
+    const formData: any = { username, email, password };
+    try {
+      const path: any = await store.handleUserToken(formData);
+      router.push(path);
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
 </script>
 
 <template>
@@ -10,24 +32,24 @@
     <form class="ul-form">
       <li class="li-form">
         <label>Nombre de usuario</label>
-        <input class="input-form" type="text" />
+        <input v-model="username" class="input-form" type="text" />
       </li>
       <li class="li-form">
         <label>Correo electrónico</label>
-        <input class="input-form" type="email" />
+        <input v-model="email" class="input-form" type="email" />
       </li>
       <li class="li-form">
         <label>Contraseña</label>
-        <input class="input-form" type="password" />
+        <input v-model="password" class="input-form" type="password" />
       </li>
-      <button class="submit-button">Registrarse</button>
+      <button class="submit-button" @click="handleRegister">Registrarse</button>
     </form>
     <div class="separator-container">
       <div class="separator"></div>
       <span class="o-separator">0</span>
     </div>
     <p>puedes crear una cuenta mediante:</p>
-    <a href="https://laruinahub-api.fly.dev/signup-google">
+    <a :href="apiUrl">
       <div class="google-button">
         Google
       </div>

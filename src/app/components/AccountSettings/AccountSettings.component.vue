@@ -47,7 +47,7 @@ async function handleUpdate(e: any) {
     <div class="profile-pic-container">
       <img class="profile-pic" :src="profilePic" alt="" width="300">
     </div>
-    <input type="file" />
+    <input v-if="editActive" type="file" />
     <h2>Datos del usuario</h2>
     <form class="ul-form">
       <li class="li-form">
@@ -58,7 +58,7 @@ async function handleUpdate(e: any) {
         <label>Correo electrónico</label>
         <input v-model="email" class="input-form" type="email" :disabled="!editActive" />
       </li>
-      <button v-if="!editActive" class="submit-button" @click="activeEdit">Editar</button>
+      <button v-if="!editActive" class="submit-button" @click="activeEdit">Editar mi información</button>
       <div v-show="showSaveCancelButtons" class="edit-buttons-container">
         <button @click="handleUpdate">Guardar cambios</button>
         <button class="cancel-button" @click="activeEdit">Cancelar</button>

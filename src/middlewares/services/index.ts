@@ -23,7 +23,7 @@ export const getUserData: any = async (token: string) => {
   return response;
 }
 
-export const updateUserData: any = async (formData: any, id: string, token: string) => {
+export const updateUserData: any = async (formData: any, id: any, token: any) => {
   const response: any = await axios.patch(API_URL + "/account/update/" + id, formData, { headers: { Authorization: token }})
                                    .then(response => response.data)
                                    .catch(() => { return { error: error.api.loadItemById } });

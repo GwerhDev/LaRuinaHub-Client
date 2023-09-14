@@ -19,7 +19,7 @@ export const useStore = defineStore('store', {
     async handleUserData(token: string) {
       this.currentUser = await getUserData(token);
     },
-    async handleUpdateUserData(formData: any, id: any, token: string) {
+    async handleUpdateUserData(formData: any, id: any, token: any) {
       await updateUserData(formData, id, token);
       this.currentUser = await getUserData(token);
     },

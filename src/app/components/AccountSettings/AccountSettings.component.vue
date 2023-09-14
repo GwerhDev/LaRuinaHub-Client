@@ -9,27 +9,27 @@ const route = useRoute();
 const token = route.params.token;
 store.handleUserData(token);
 
-const currentUser = computed(() => store.currentUser);
-let id = computed(() => currentUser.value.userData?.id);
-let username = computed(() => currentUser.value.userData?.username);
-let email = computed(() => currentUser.value.userData?.email);
-let profilePic = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);
+const currentUser: any = computed(() => store.currentUser);
+let id: string = computed(() => currentUser.value.userData?.id);
+let email: string = computed(() => currentUser.value.userData?.email);
+let username: string = computed(() => currentUser.value.userData?.username);
+let profilePic: string = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);
 
-const editActive = ref(false);
-const showSaveCancelButtons = computed(() => editActive.value);
+const editActive: any = ref(false);
+const showSaveCancelButtons: any = computed(() => editActive.value);
 
 function activeEdit(e: any) {
   e.preventDefault();
   editActive.value = !editActive.value;
-  username = currentUser.value.userData?.username;
   email = currentUser.value.userData?.email;
+  username = currentUser.value.userData?.username;
   profilePic = currentUser.value.userData?.profilePic ?? defaultImage;
 }
 
 async function handleUpdate(e: any) {
   e.preventDefault();
   if(profilePic === defaultImage) { profilePic = null };
-  const formData = { username, email, profilePic };
+  const formData: any = { username, email, profilePic };
   try {
     await store.handleUpdateUserData(formData, id.value, token);
     editActive.value = !editActive.value;
@@ -37,7 +37,6 @@ async function handleUpdate(e: any) {
   } catch (error) {
     console.error(error)
   }
-
 }
 
 </script>

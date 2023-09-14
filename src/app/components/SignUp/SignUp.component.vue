@@ -6,9 +6,8 @@
     <div class="logo-container">
       <img class="logo" src="../../../assets/png/ruina-records-logo.png" alt="" width="300">
     </div>
-    <h1>La Ruina Hub</h1>
     <p>Rellena los siguientes campos:</p>
-    <ul class="ul-form">
+    <form class="ul-form">
       <li class="li-form">
         <label>Nombre de usuario</label>
         <input class="input-form" type="text" />
@@ -21,9 +20,14 @@
         <label>Contraseña</label>
         <input class="input-form" type="password" />
       </li>
-    </ul>
+      <button class="submit-button">SignUp</button>
+    </form>
     <p>O puedes crear una cuenta mediante:</p>
-    <a href="https://laruinahub-api.fly.dev/login-google">Google</a>
+    <a href="https://laruinahub-api.fly.dev/signup-google">
+      <div class="google-button">
+        Google
+      </div>
+    </a>
   </div>
 </template>
 

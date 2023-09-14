@@ -6,6 +6,7 @@
   justify-content: flex-start;
   border: solid;
   border-radius: 5px;
+  text-align: left;
 }
 
 .ul-form {
@@ -15,6 +16,7 @@
 .li-form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .input-form {
@@ -24,4 +26,17 @@
 
 input:active, input:hover, input:focus-visible {
   border-color: var(--primary-color);
+}
+
+.submit-button {
+  width: 100%;
+}
+
+.google-button {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  padding: .7rem;
+  border-radius: 5px;
+  color: black;
 }

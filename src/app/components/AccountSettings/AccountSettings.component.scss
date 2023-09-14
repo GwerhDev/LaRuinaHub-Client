@@ -59,3 +59,28 @@ input:active, input:hover, input:focus-visible {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.profile-pic-container {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: var(--primary-background-color);
+}
+
+.profile-pic {
+  background-color: var(--primary-color);
+  width: 280px;
+  height: 100%;
+  padding: 3px;
+}
+
+.edit-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-button {
+  background: rgb(71, 71, 71);
+}

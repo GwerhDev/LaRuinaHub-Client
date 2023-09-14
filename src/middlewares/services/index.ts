@@ -2,15 +2,15 @@ import axios from "axios"
 import { API_URL } from "../misc/const"
 import { error } from "../misc/errors";
 
-export const signupGoogle: any = async (form: any) => {
-  const response: any = await axios.post(API_URL + "/signup-google", form)
+export const signupGoogle: any = async (formData: any) => {
+  const response: any = await axios.post(API_URL + "/signup-google", formData)
                                    .then(response => response.data.token)
                                    .catch(() => { return { error: error.api.loadAllItems } });
   return response;
 }
 
-export const signupInner: any = async (form: any) => {
-  const response: any = await axios.post(API_URL + "/signup-inner", form)
+export const signupInner: any = async (formData: any) => {
+  const response: any = await axios.post(API_URL + "/signup-inner", formData)
                                    .then(response => response.data.token)
                                    .catch(() => { return { error: error.api.loadItemById } });
   return response;
@@ -18,6 +18,13 @@ export const signupInner: any = async (form: any) => {
 
 export const getUserData: any = async (token: string) => {
   const response: any = await axios.get(API_URL + "/auth", { headers: { Authorization: token }})
+                                   .then(response => response.data)
+                                   .catch(() => { return { error: error.api.loadItemById } });
+  return response;
+}
+
+export const updateUserData: any = async (formData: any, id: string, token: string) => {
+  const response: any = await axios.patch(API_URL + "/account/update/" + id, formData, { headers: { Authorization: token }})
                                    .then(response => response.data)
                                    .catch(() => { return { error: error.api.loadItemById } });
   return response;

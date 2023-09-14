@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia';
-import { getUserData, signupInner } from '../services';
+import { getUserData, signupInner, updateUserData } from '../services';
 
 interface storeState {
-  userData: any,
+  currentUser: any,
 }
 
 export const useStore = defineStore('store', {
   state: (): storeState => ({
-    userData: {},
+    currentUser: {},
   }),
 
   actions: {
@@ -17,8 +17,12 @@ export const useStore = defineStore('store', {
       return url;
     },
     async handleUserData(token: string) {
-      this.userData = await getUserData(token);
-    }
+      this.currentUser = await getUserData(token);
+    },
+    async handleUpdateUserData(formData: any, id: string, token: string) {
+      await updateUserData(formData, id, token);
+      this.currentUser = await getUserData(token);
+    },
   }
   
 });

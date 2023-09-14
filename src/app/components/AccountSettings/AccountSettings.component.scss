@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
   border: solid;
+  border-color: var(--primary-color);
   border-radius: 5px;
   text-align: left;
 }
@@ -61,17 +62,21 @@ input:active, input:hover, input:focus-visible {
 }
 
 .profile-pic-container {
-  width: 100%;
+  width: 300px;
+  height: 300px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 100%;
   overflow: hidden;
   background-color: var(--primary-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-pic {
   background-color: var(--primary-color);
-  width: 280px;
+  width: 100%;
   height: 100%;
   padding: 3px;
 }

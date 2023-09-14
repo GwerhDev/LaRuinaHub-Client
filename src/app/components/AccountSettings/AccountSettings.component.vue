@@ -33,10 +33,21 @@ async function handleUpdate(e: any) {
   try {
     await store.handleUpdateUserData(formData, id.value, token);
     editActive.value = !editActive.value;
-    if(profilePic === null) { profilePic = defaultImage };
+    if(!profilePic) profilePic = defaultImage;
   } catch (error) {
     console.error(error)
   }
+}
+
+function handleFileUpload(e:any) {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  reader.onloadend = (e) => {
+    const pic = e.target.result;
+    const imageSrc = pic;
+    profilePic = imageSrc;
+  }
+  reader.readAsDataURL(file);
 }
 
 </script>
@@ -46,7 +57,7 @@ async function handleUpdate(e: any) {
     <div class="profile-pic-container">
       <img class="profile-pic" :src="profilePic" alt="" width="300">
     </div>
-    <input v-if="editActive" type="file" />
+    <input v-if="editActive" v-on:input="handleFileUpload" type="file" />
     <h2>Datos del usuario</h2>
     <form class="ul-form">
       <li class="li-form">

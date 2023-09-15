@@ -1,10 +1,15 @@
 <style scoped lang="scss" src="./NavBar.component.scss"/>
 <script setup lang="ts">  
   import Menu from '../Menu/Menu.component.vue';
+  import AppsMenu from '../AppsMenu/AppsMenu.component.vue';
   import BurgerMenu from '../BurgerMenu/BurgerMenu.component.vue';
+  import { useStore } from '../../../middlewares/store';
+  import { computed } from 'vue';
 
   function exit() {
   }
+  const store = useStore();
+  const currentUser: any = computed(() => store.currentUser);
 
 </script>
 
@@ -18,7 +23,13 @@
           </router-link>
         </div>
         <div class="menu-container-desk">
+          <AppsMenu></AppsMenu>
+        </div>
+        <div class="menu-container-desk">
           <Menu></Menu>
+          <div class="nav-profile-pic-container">
+            <img :src="currentUser?.userData?.profilePic?? null" alt="">
+          </div>
         </div>
       </ul>
     </main>

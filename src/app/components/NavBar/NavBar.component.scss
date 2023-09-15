@@ -65,6 +65,27 @@ input {
   }
 }
 
+.nav-profile-pic-container {
+  border-radius: 100%;
+  overflow: hidden;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-width: 2px;
+  border-color: var(--primary-color);
+
+  img{
+    width: 100%;
+  }
+  &:hover {
+    border-color: var(--primary-hover-color);
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 1080px) {
   .nav-container-desk {
     display: none;

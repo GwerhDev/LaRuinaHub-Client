@@ -2,7 +2,7 @@
 <script setup lang="ts">
   import { computed } from 'vue';
   import { useStore } from '../../../middlewares/store';
-import { getUserToken } from '../../../helpers';
+  import { getUserToken } from '../../../helpers';
 
   const store = useStore();
   const currentUser: any = computed(() => store.currentUser);
@@ -31,7 +31,7 @@ import { getUserToken } from '../../../helpers';
     </router-link>
   </li>
   <li v-if="logged" class="mr-1 ml-1">
-    <router-link class="menu-letters" to='/' @click="logout()" >
+    <router-link class="menu-letters" to='/' @click="logout()">
       Cerrar sesión
     </router-link>
   </li>

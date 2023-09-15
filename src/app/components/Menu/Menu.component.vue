@@ -2,12 +2,13 @@
 <script setup lang="ts">
   import { computed } from 'vue';
   import { useStore } from '../../../middlewares/store';
+import { getUserToken } from '../../../helpers';
 
   const store = useStore();
   const currentUser: any = computed(() => store.currentUser);
   let logged: any = computed(() => currentUser.value.logged);
-  function userToken() { return localStorage.getItem('userToken') };
-  const pathAccount: string = '/account/settings/' + userToken();
+  let token: any = getUserToken() || computed(() => store.userToken);
+  const pathAccount: string = '/account/settings/';
 
   function logout() {store.logout()};
 
@@ -25,7 +26,7 @@
     </router-link>
   </li>
   <li v-if="logged" class="mr-1 ml-1">
-    <router-link class="menu-letters" :to="pathAccount">
+    <router-link class="menu-letters" :to="pathAccount + token">
       Mi cuenta
     </router-link>
   </li>

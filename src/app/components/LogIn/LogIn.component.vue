@@ -3,8 +3,8 @@
   import { useStore } from '../../../middlewares/store/index'; 
   import { useRouter } from 'vue-router';
   import { onMounted, computed } from 'vue';
-  import googleIcon from '../../../assets/png/google-icon.png';
   import { getUserToken } from '../../../helpers';
+  import googleIcon from '../../../assets/png/google-icon.png';
 
   const store: any = useStore(); 
   const router: any = useRouter();

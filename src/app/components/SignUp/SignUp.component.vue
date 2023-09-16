@@ -4,6 +4,7 @@
   import { useRouter } from 'vue-router';
   import { onMounted, computed } from 'vue';
   import { getUserToken } from '../../../helpers';
+  import googleIcon from '../../../assets/png/google-icon.png';
 
   const store: any = useStore(); 
   const router: any = useRouter();
@@ -62,6 +63,7 @@
     <p>puedes crear una cuenta mediante:</p>
     <a :href="apiUrl">
       <div class="google-button">
+        <img :src="googleIcon" alt="">
         Google
       </div>
     </a>

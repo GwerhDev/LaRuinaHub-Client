@@ -36,10 +36,16 @@ input:active, input:hover, input:focus-visible {
 .google-button {
   background-color: rgb(255, 255, 255);
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: .7rem;
   border-radius: 5px;
   color: black;
+  img {
+    width: 25px;
+    height: 25px;
+    margin-right: 1rem;
+  }
 }
 .separator-container {
   display: flex;

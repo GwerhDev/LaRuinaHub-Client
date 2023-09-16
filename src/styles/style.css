@@ -311,3 +311,7 @@ input:disabled {
   border: none;
   border-color: transparent;
 }
+
+.no-bg {
+  background: none;
+}

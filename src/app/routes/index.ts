@@ -3,6 +3,7 @@ import LandingPage from '../pages/LandingPage.vue';
 import LoginPage from '../pages/LoginPage.vue';
 import RegisterPage from '../pages/RegisterPage.vue';
 import AccountPage from '../pages/AccountPage.vue';
+import OAuthPage from '../pages/OAuthPage.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -24,6 +25,11 @@ const routes: RouteRecordRaw[] = [
     path: '/account/settings/:token',
     name: 'AccountPage',
     component: AccountPage
+  },
+  {
+    path: '/oauth/chooseaccount/:redirect_uri',
+    name: 'OAuth',
+    component: OAuthPage
   },
 ]
 

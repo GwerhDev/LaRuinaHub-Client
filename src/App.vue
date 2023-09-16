@@ -9,5 +9,7 @@
  
 <template> 
   <router-view/> 
-  <nav-bar/> 
+  <template v-if="$route.path !== '/oauth/chooseaccount/' && !$route.path.startsWith('/oauth/chooseaccount/')">
+    <nav-bar/> 
+  </template>
 </template>

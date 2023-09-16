@@ -8,7 +8,6 @@ const store: any = useStore();
 const route: any = useRoute();
 const token: any = route.params.token;
 store.handleUserData(token);
-localStorage.setItem('userToken', token);
 
 const currentUser: any = computed(() => store.currentUser);
 let id: any = computed(() => currentUser.value.userData?.id);

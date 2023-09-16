@@ -1,7 +1,6 @@
 
 import { useRouter } from 'vue-router';
 <script setup lang="ts">
-  import { getUserToken } from '../../../helpers';
   import { useRoute } from 'vue-router';
   import { useStore } from '../../../middlewares/store';
   import { computed } from 'vue';
@@ -9,13 +8,13 @@ import { useRouter } from 'vue-router';
   const store = useStore();
   const route: any = useRoute();
   const currentUser: any = computed(() => store.currentUser);
-  const userToken: any = computed(() => store.userToken) || getUserToken();
+  const userToken: any = computed(() => store.userToken);
   const logged: any = computed(() => currentUser.value.logged);
   const profilePic: any = computed(() => currentUser.value.userData.profilePic);
   const email: any = computed(() => currentUser.value.userData.email);
   const username: any = computed(() => currentUser.value.userData.username);
   const uri: any = "https://" + route.params.redirect_uri;
-  const redirectUrl = uri + "/#/auth?token=" + userToken;
+  const redirectUrl = uri + "/#/auth?token=" + userToken.value;
 
   function selectAccount() {
     window.location.href = redirectUrl;

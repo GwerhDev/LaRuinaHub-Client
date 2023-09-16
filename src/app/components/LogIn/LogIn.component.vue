@@ -2,12 +2,23 @@
   import { API_URL } from '../../../middlewares/misc/const';
   import { useStore } from '../../../middlewares/store/index'; 
   import { useRouter } from 'vue-router';
+  import { onMounted, computed } from 'vue';
+  import googleIcon from '../../../assets/png/google-icon.png';
+  import { getUserToken } from '../../../helpers';
 
   const store: any = useStore(); 
   const router: any = useRouter();
   const apiUrl: string = API_URL + "/login-google";
+  const currentUser: any = computed(() => store.currentUser);
   let email = "";
   let password = "";
+  let token = getUserToken();
+
+  onMounted(() => {
+    if(!currentUser?.value.error && token) {
+      router.push('/account/settings/' + token);
+    }
+  });
 
   async function handleLogin(e: any) {
     e.preventDefault();
@@ -19,7 +30,6 @@
       console.error(error)
     }
   }
-
 </script>
 
 <template>
@@ -46,6 +56,7 @@
     <p>puedes iniciar sesión mediante:</p>
     <a :href="apiUrl">
       <div class="google-button">
+        <img :src="googleIcon" alt="">
         Google
       </div>
     </a>

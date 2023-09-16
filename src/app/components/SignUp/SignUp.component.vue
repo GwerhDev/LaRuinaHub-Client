@@ -2,13 +2,24 @@
   import { API_URL } from '../../../middlewares/misc/const';
   import { useStore } from '../../../middlewares/store/index'; 
   import { useRouter } from 'vue-router';
+  import { onMounted, computed } from 'vue';
+  import { getUserToken } from '../../../helpers';
 
   const store: any = useStore(); 
   const router: any = useRouter();
   const apiUrl: string = API_URL + "/signup-google";
+  const currentUser: any = computed(() => store.currentUser);
+
   let username = "";
   let email = "";
   let password = "";
+  let token = getUserToken();
+
+  onMounted(() => {
+    if(!currentUser?.value.error && token) {
+      router.push('/account/settings/' + token);
+    }
+  });
 
   async function handleRegister(e: any) {
     e.preventDefault();

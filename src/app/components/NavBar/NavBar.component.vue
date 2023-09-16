@@ -3,6 +3,7 @@
   import Menu from '../Menu/Menu.component.vue';
   import AppsMenu from '../AppsMenu/AppsMenu.component.vue';
   import BurgerMenu from '../BurgerMenu/BurgerMenu.component.vue';
+  import userIcon from '../../../assets/png/user-icon.png';
   import { useStore } from '../../../middlewares/store';
   import { computed } from 'vue';
 
@@ -28,7 +29,7 @@
         <div class="menu-container-desk">
           <Menu></Menu>
           <div class="nav-profile-pic-container">
-            <img :src="currentUser?.userData?.profilePic?? null" alt="">
+            <img :src="currentUser?.userData?.profilePic?? userIcon" alt="">
           </div>
         </div>
       </ul>

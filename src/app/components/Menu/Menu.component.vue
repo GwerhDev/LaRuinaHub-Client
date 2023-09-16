@@ -7,7 +7,7 @@
   const store = useStore();
   const currentUser: any = computed(() => store.currentUser);
   let logged: any = computed(() => currentUser.value.logged);
-  let token: any = getUserToken() || computed(() => store.userToken);
+  let token: any = computed(() => store.userToken) || getUserToken();
   const pathAccount: string = '/account/settings/';
 
   function logout() {store.logout()};

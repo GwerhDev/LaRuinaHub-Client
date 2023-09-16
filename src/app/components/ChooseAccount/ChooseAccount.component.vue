@@ -1,11 +1,13 @@
 <script setup lang="ts">
-  import { useRoute } from 'vue-router';
+  import { useRoute, useRouter } from 'vue-router';
   import { useStore } from '../../../middlewares/store';
   import { computed } from 'vue';
   import { getUserToken } from '../../../helpers';
+  import userIcon from '../../../assets/png/user-icon.png'
 
   const store = useStore();
   const route: any = useRoute();
+  const router: any = useRouter();
   const currentUser: any = computed(() => store.currentUser);
   const logged: any = computed(() => currentUser.value.logged);
   const profilePic: any = computed(() => currentUser.value.userData.profilePic);
@@ -16,6 +18,10 @@
 
   function selectAccount() {
     window.location.href = redirectUrl;
+  }
+
+  function login() {
+    router.push('/login')
   }
 
 </script>
@@ -34,6 +40,14 @@
       <div class="data">
         {{ username }} <br>
         {{ email }}
+      </div>
+    </div>
+    <div v-if="!logged" class="account-container" @click="login">
+      <div class="profilepic-container">
+        <img :src="userIcon">
+      </div>
+      <div class="data">
+        Iniciar sesión
       </div>
     </div>
   </div>

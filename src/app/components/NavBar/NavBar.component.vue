@@ -11,6 +11,7 @@
   }
   const store = useStore();
   const currentUser: any = computed(() => store.currentUser);
+  let logged: any = computed(() => currentUser.value.logged);
 
 </script>
 
@@ -23,7 +24,7 @@
             <img width="110" src="../../../assets/png/ruina-records-logo.png" alt="">
           </router-link>
         </div>
-        <div class="menu-container-desk">
+        <div v-if="logged" class="menu-container-desk">
           <AppsMenu></AppsMenu>
         </div>
         <div class="menu-container-desk">

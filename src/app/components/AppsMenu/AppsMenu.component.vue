@@ -1,12 +1,11 @@
 <style scoped lang="scss" src="./AppsMenu.component.scss"/>
 <script setup lang="ts">
   import { getUserToken } from '../../../helpers';
-  let token: any = getUserToken();
 </script>
 
 <template>
   <li class="mr-1 ml-1">
-    <a class="menu-letters" :href="'https://tv.laruinarecords.cl/#/auth?token=' + token">
+    <a class="menu-letters" :href="'https://tv.laruinarecords.cl/#/auth?token=' + getUserToken()">
       TV
     </a>
   </li>

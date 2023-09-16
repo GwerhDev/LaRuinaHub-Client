@@ -15,7 +15,7 @@ import { useRouter } from 'vue-router';
   const email: any = computed(() => currentUser.value.userData.email);
   const username: any = computed(() => currentUser.value.userData.username);
   const uri: any = "https://" + route.params.redirect_uri;
-  const redirectUrl = uri + "/auth?token=" + getUserToken();
+  const redirectUrl = uri + "/#/auth?token=" + getUserToken();
 
   function selectAccount() {
     window.location.href = redirectUrl;

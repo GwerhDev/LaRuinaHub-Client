@@ -1,28 +1,24 @@
 
-import { getUserToken } from '../../../helpers';
-
-import { getUserToken } from '../../../helpers';
+import { useRouter } from 'vue-router';
 <script setup lang="ts">
-  import { useRoute } from 'vue-router';
+  import { getUserToken } from '../../../helpers';
+  import { useRoute, useRouter } from 'vue-router';
   import { useStore } from '../../../middlewares/store';
   import { computed, onMounted } from 'vue';
 
   const store = useStore();
+  const route: any = useRoute();
+  const router: any = useRouter();
   const currentUser: any = computed(() => store.currentUser);
-  const userToken: any = computed(() => store.userToken);
+  const userToken: any = computed(() => store.userToken) || getUserToken();
   const logged: any = computed(() => currentUser.value.logged);
   const profilePic: any = computed(() => currentUser.value.userData.profilePic);
   const email: any = computed(() => currentUser.value.userData.email);
   const username: any = computed(() => currentUser.value.userData.username);
-  const route: any = useRoute();
   const uri: any = "https://" + route.params.redirect_uri;
-  const redirectUrl = uri + "/auth?token=" + userToken.value;
+  const redirectUrl = uri + "/auth?token=" + getUserToken();
 
-  onMounted(() => {
-    if(currentUser?.value.error || !userToken?.value) {
-      router.push('/login');
-    }
-  });
+  console.log(redirectUrl);
 
   function selectAccount() {
     window.location.href = redirectUrl;

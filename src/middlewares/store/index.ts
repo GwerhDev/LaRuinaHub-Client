@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { getUserData, loginInner, signupInner, updateUserData } from '../services';
+import { setUserToken } from '../../helpers';
 
 interface storeState {
   currentUser: any,
@@ -35,6 +36,7 @@ export const useStore = defineStore('store', {
     async handleUserData(token: any) {
       this.currentUser = await getUserData(token);
       this.userToken = token;
+      setUserToken(token)
     },
     async handleUpdateUserData(formData: any, id: any, token: any) {
       await updateUserData(formData, id, token);

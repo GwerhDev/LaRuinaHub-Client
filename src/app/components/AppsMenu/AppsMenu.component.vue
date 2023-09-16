@@ -6,7 +6,7 @@
 
 <template>
   <li class="mr-1 ml-1">
-    <a class="menu-letters" :href="'https://tv.laruinarecords.cl/#/auth?token=' + token" target="_blank">
+    <a class="menu-letters" :href="'https://tv.laruinarecords.cl/#/auth?token=' + token">
       TV
     </a>
   </li>

@@ -5,7 +5,8 @@
   import { getUserToken } from '../../../helpers';
   import userIcon from '../../../assets/png/user-icon.png'
 
-  const store = useStore();
+  const store: any = useStore();
+  const token: any = getUserToken();
   const route: any = useRoute();
   const router: any = useRouter();
   const currentUser: any = computed(() => store.currentUser);
@@ -16,13 +17,9 @@
   const uri: any = "https://" + route.params.redirect_uri;
   const redirectUrl = uri + "/#/auth?token=" + getUserToken();
 
-  function selectAccount() {
-    window.location.href = redirectUrl;
-  }
+  function selectAccount() { window.location.href = redirectUrl };
 
-  function login() {
-    router.push('/login')
-  }
+  function login() { router.push('/login') };
 
 </script>
 
@@ -42,7 +39,7 @@
         {{ email }}
       </div>
     </div>
-    <div v-if="!logged" class="account-container" @click="login">
+    <div v-if="!token" class="account-container" @click="login">
       <div class="profilepic-container">
         <img :src="userIcon">
       </div>

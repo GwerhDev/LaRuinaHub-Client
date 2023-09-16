@@ -1,8 +1,7 @@
 <style scoped lang="scss" src="./AppsMenu.component.scss"/>
 <script setup lang="ts">
-import { getUserToken } from '../../../helpers';
-
-  const token: any = getUserToken();
+  import { getUserToken } from '../../../helpers';
+  let token: any = getUserToken();
 </script>
 
 <template>

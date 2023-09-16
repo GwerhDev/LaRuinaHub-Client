@@ -21,14 +21,14 @@ export const useStore = defineStore('store', {
     },
     async handleRegister(data: any) {
       const userToken = await signupInner(data);
-      localStorage.setItem('userToken', userToken);
+      setUserToken(userToken);
       const url = '/account/settings/' + userToken;
       this.userToken = userToken;
       return url;
     },
     async handleLogin(data: any) {
       const userToken = await loginInner(data);
-      localStorage.setItem('userToken', userToken);
+      setUserToken(userToken);
       const url = '/account/settings/' + userToken;
       this.userToken = userToken;
       return url;
@@ -36,12 +36,13 @@ export const useStore = defineStore('store', {
     async handleUserData(token: any) {
       this.currentUser = await getUserData(token);
       this.userToken = token;
-      setUserToken(token)
+      setUserToken(token);
     },
     async handleUpdateUserData(formData: any, id: any, token: any) {
       await updateUserData(formData, id, token);
       this.currentUser = await getUserData(token);
       this.userToken = token;
+      setUserToken(token);
     },
   }
   

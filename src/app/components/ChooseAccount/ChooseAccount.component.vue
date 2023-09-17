@@ -30,6 +30,7 @@
       <h2>Selecciona una cuenta</h2>
       <h3>para ir a <a :href="uri">{{uri}}</a></h3>
     </div>
+    <div v-if="!logged && token" class="loader"></div>
     <div v-if="logged" class="account-container" @click="selectAccount">
       <div class="profilepic-container">
         <img :src="profilePic">

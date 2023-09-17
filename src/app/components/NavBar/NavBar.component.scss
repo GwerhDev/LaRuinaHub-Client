@@ -24,6 +24,7 @@
   padding-left: 45px;
   padding-right: 45px;
   overflow: visible;
+  overflow: hidden;
 }
 
 input {
@@ -44,6 +45,11 @@ input {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+
+.icon {
+  width: 300px;
+  display: flex;
 }
 
 .burger-menu-container-desk {

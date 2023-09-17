@@ -5,6 +5,11 @@
 
 <template>
   <li class="mr-1 ml-1">
+    <router-link class="menu-letters" to="/">
+      Hub
+    </router-link>
+  </li>
+  <li class="mr-1 ml-1">
     <a class="menu-letters" :href="'https://tv.laruinarecords.cl/#/auth?token=' + getUserToken()">
       TV
     </a>

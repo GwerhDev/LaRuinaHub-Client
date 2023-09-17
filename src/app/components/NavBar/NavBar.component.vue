@@ -19,15 +19,17 @@
   <div class="nav-container-desk">
     <main class="nav-menu-desk">
       <ul class="nav-menu-ul-desk">
-        <div class="d-flex just-cent align-cent">
-          <router-link class="d-flex just-cent align-cent" @click="exit()" to='/'>
-            <img width="110" src="../../../assets/png/ruina-records-logo.png" alt="">
-          </router-link>
+        <div class="icon">
+          <div class="d-flex just-cent align-cent">
+            <router-link class="d-flex just-cent align-cent" @click="exit()" to='/'>
+              <img width="110" src="../../../assets/png/ruina-records-logo.png" alt="">
+            </router-link>
+          </div>
         </div>
         <div v-if="logged" class="menu-container-desk">
           <AppsMenu></AppsMenu>
         </div>
-        <div class="menu-container-desk">
+        <div class="menu-container-desk icon">
           <Menu></Menu>
           <div class="nav-profile-pic-container">
             <img :src="currentUser?.userData?.profilePic?? userIcon" alt="">

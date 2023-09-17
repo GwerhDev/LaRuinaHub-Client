@@ -4,10 +4,19 @@
   import musicIcon from "../../../assets/svg/music-icon.svg";
   import cartIcon from "../../../assets/png/cart-icon.png";
 
-  let urlTv = "https://tv.laruinarecords.cl";
-  let urlPlay = "https://play.laruinarecords.cl";
-  let urlMerch = "https://merch.laruinarecords.cl";
+  import { computed } from 'vue';
+  import { useStore } from '../../../middlewares/store';
+  import { getUserToken } from '../../../helpers';
 
+  const store = useStore();
+  const currentUser: any = computed(() => store.currentUser);
+  let logged: any = computed(() => currentUser.value.logged);
+
+  const urlTv: string = "https://tv.laruinarecords.cl";
+  const urlPlay: string = "https://play.laruinarecords.cl";
+  const urlMerch: string = "https://merch.laruinarecords.cl";
+
+  const loggedUrlTv: string = urlTv + '/#/auth?token=' + getUserToken()
 </script>
 
 <template>
@@ -17,7 +26,7 @@
   </div>
   <h3>Visita nuestras aplicaciones</h3>
   <div class="app-container">
-    <a class="app-card" :href="urlTv">
+    <a class="app-card" :href="logged? loggedUrlTv : urlTv">
       <img :src="streamingIcon" alt="">
       <h2>La Ruina TV</h2>
     </a>

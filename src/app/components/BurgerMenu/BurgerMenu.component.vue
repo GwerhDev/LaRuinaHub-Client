@@ -34,7 +34,7 @@ import { upToTop } from '../../../utils/upToTop';
         <div class="d-flex align-cent logo-container">
           <div class="d-flex align-cent logo-cont">
             <router-link class="d-flex align-cent logo-image-container" @click="exit()" to='/'>
-              <img src="../../../assets/svg/logoipsum.svg" alt="">
+              <img src="../../../assets/png/ruina-records-logo.png" width="100" alt="">
             </router-link>
             <div class="close-menu-container">
               <span @click="closeMenu()">X</span>

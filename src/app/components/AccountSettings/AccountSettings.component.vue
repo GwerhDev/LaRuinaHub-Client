@@ -10,6 +10,7 @@ const token: any = route.params.token;
 store.handleUserData(token);
 
 const currentUser: any = computed(() => store.currentUser);
+let logged: any = computed(() => currentUser.value.logged);
 let id: any = computed(() => currentUser.value.userData?.id);
 let email: any = computed(() => currentUser.value.userData?.email);
 let username: any = computed(() => currentUser.value.userData?.username);
@@ -59,7 +60,8 @@ function handleFileUpload(e:any) {
     </div>
     <input v-if="editActive" v-on:input="handleFileUpload" type="file" />
     <h2>Datos del usuario</h2>
-    <form class="ul-form">
+    <div v-if="!logged" class="loader"></div>
+    <form class="ul-form" v-if="logged">
       <li class="li-form">
         <label>Nombre de usuario</label>
         <input v-model="username" class="input-form" type="text" :disabled="!editActive" />

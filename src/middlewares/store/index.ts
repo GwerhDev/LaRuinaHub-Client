@@ -34,9 +34,14 @@ export const useStore = defineStore('store', {
       return url;
     },
     async handleUserData(token: any) {
-      this.currentUser = await getUserData(token);
-      this.userToken = token;
-      setUserToken(token);
+      try {
+        this.currentUser = await getUserData(token);
+        this.userToken = token;
+        setUserToken(token);
+      } catch (error) {
+        console.error(error);
+        this.logout();
+      }
     },
     async handleUpdateUserData(formData: any, id: any, token: any) {
       await updateUserData(formData, id, token);

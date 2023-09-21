@@ -33,7 +33,10 @@ export const loginInner: any = async (formData: any) => {
 export const getUserData: any = async (token: any) => {
   const response: any = await axios.get(API_URL + "/auth", { headers: { Authorization: token }})
                                    .then(response => response.data)
-                                   .catch(() => { return { error: error.api.loadItemById } });
+                                   .catch(() => {
+                                      localStorage.clear();
+                                      return { error: error.api.loadItemById }
+                                  });
   return response;
 }
 

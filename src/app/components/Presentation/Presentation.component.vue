@@ -16,7 +16,7 @@
   const urlPlay: string = "https://play.laruinarecords.cl";
   const urlMerch: string = "https://merch.laruinarecords.cl";
 
-  const loggedUrlTv: string = urlTv + '/#/auth?token=' + getUserToken()
+  const loggedUrlTv: string = urlTv + '/#/auth?token=' + getUserToken();
 </script>
 
 <template>

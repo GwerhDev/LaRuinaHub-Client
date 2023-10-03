@@ -13,7 +13,6 @@
   background-color: var(--primary-color);
   background: linear-gradient(168deg, rgb(72, 72, 72) 20%, var(--primary-color) 120%);
 
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

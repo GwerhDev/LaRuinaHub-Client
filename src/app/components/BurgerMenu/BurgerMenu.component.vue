@@ -3,8 +3,9 @@
   import { useStore } from '../../../middlewares/store';
   import { useRouter } from 'vue-router';
   import { openMenu, closeMenu } from '../../../helpers/menu';
+  import { upToTop } from '../../../utils/upToTop';
   import Menu from '../Menu/Menu.component.vue';
-import { upToTop } from '../../../utils/upToTop';
+  import AppsMenu from '../AppsMenu/AppsMenu.component.vue';
 
   const router: any = useRouter();
   const store: any = useStore();
@@ -39,12 +40,13 @@ import { upToTop } from '../../../utils/upToTop';
             <div class="close-menu-container">
               <span @click="closeMenu()">X</span>
             </div>
-          </div>          
+          </div>
           <div class="burger-menu-container">
-              <img src="../../../assets/svg/icon-burger-menu.svg" @click="openMenu()" alt="">
+            <img src="../../../assets/svg/icon-burger-menu.svg" @click="openMenu()" alt="">
           </div>
         </div>
         <div class="menu-container">
+          <AppsMenu></AppsMenu>
           <Menu></Menu>
         </div>
         <div class="searcher-container mt-5">

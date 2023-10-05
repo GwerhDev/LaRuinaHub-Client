@@ -16,7 +16,7 @@ import { closeMenu } from '../../../helpers/menu';
     </a>
   </li>
   <li class="mr-1 ml-1">
-    <a class="menu-letters" :href="'https://play.laruinarecords.cl/#/auth?token=' + getUserToken()" target="_blank" @click="closeMenu()">
+    <a class="menu-letters" :href="'https://play.laruinarecords.cl/#/auth?token=' + getUserToken()" @click="closeMenu()">
       Play
     </a>
   </li>

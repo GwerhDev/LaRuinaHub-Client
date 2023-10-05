@@ -17,6 +17,7 @@
   const urlMerch: string = "https://merch.laruinarecords.cl";
 
   const loggedUrlTv: string = urlTv + '/#/auth?token=' + getUserToken();
+  const loggedUrlPlay: string = urlPlay + '/#/auth?token=' + getUserToken();
 </script>
 
 <template>
@@ -30,7 +31,7 @@
       <img :src="streamingIcon" alt="">
       <h2>La Ruina TV</h2>
     </a>
-    <a class="app-card" :href="urlPlay">
+    <a class="app-card" :href="logged? loggedUrlPlay : urlPlay">
       <img :src="musicIcon" alt="">
       <h2>La Ruina Play</h2>
     </a>

@@ -40,7 +40,6 @@ export const useStore = defineStore('store', {
         setUserToken(token);
       } catch (error) {
         console.error(error);
-        this.logout();
       }
     },
     async handleUpdateUserData(formData: any, id: any, token: any) {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import ChooseAccount from '../components/ChooseAccount/ChooseAccount.component.vue'
+  import ChooseAccount from '../components/ChooseAccount/ChooseAccount.component.vue';
 </script>
 
 <template>

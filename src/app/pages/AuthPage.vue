@@ -1,11 +1,12 @@
 <script setup lang="ts">
-  import Presentation from '../components/Presentation/Presentation.component.vue';
+  import Auth from "../components/Auth/Auth.component.vue"
+
 </script>
 
 <template>
   <main class="main-container">
     <div class="container">
-      <Presentation/>
+      <Auth/>
     </div>
   </main>
 </template>

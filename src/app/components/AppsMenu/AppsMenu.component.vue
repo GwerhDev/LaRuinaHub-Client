@@ -1,7 +1,7 @@
 <style scoped lang="scss" src="./AppsMenu.component.scss"/>
 <script setup lang="ts">
   import { getUserToken } from '../../../helpers';
-import { closeMenu } from '../../../helpers/menu';
+  import { closeMenu } from '../../../helpers/menu';
 </script>
 
 <template>
@@ -22,7 +22,7 @@ import { closeMenu } from '../../../helpers/menu';
   </li>
   <li class="mr-1 ml-1">
     <a class="menu-letters" href="https://merch.laruinarecords.cl" target="_blank" @click="closeMenu()">
-      Merch 
+      Merch
     </a>
   </li>
 </template>

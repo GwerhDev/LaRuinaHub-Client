@@ -11,17 +11,17 @@
     </router-link>
   </li>
   <li class="mr-1 ml-1">
-    <a class="menu-letters" :href="'https://tv.laruinarecords.cl/#/auth?token=' + getUserToken()" @click="closeMenu()">
+    <a class="menu-letters" :href="'https://tv.laruina.cl/#/auth?token=' + getUserToken()" @click="closeMenu()">
       TV
     </a>
   </li>
   <li class="mr-1 ml-1">
-    <a class="menu-letters" :href="'https://play.laruinarecords.cl/#/auth?token=' + getUserToken()" @click="closeMenu()">
+    <a class="menu-letters" :href="'https://play.laruina.cl/#/auth?token=' + getUserToken()" @click="closeMenu()">
       Play
     </a>
   </li>
   <li class="mr-1 ml-1">
-    <a class="menu-letters" href="https://merch.laruinarecords.cl" target="_blank" @click="closeMenu()">
+    <a class="menu-letters" href="https://merch.laruina.cl" target="_blank" @click="closeMenu()">
       Merch
     </a>
   </li>

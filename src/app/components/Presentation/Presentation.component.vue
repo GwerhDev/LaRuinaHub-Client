@@ -12,9 +12,9 @@
   const currentUser: any = computed(() => store.currentUser);
   let logged: any = computed(() => currentUser.value.logged);
 
-  const urlTv: string = "https://tv.laruinarecords.cl";
-  const urlPlay: string = "https://play.laruinarecords.cl";
-  const urlMerch: string = "https://merch.laruinarecords.cl";
+  const urlTv: string = "https://tv.laruina.cl";
+  const urlPlay: string = "https://play.laruina.cl";
+  const urlMerch: string = "https://merch.laruina.cl";
 
   const loggedUrlTv: string = urlTv + '/#/auth?token=' + getUserToken();
   const loggedUrlPlay: string = urlPlay + '/#/auth?token=' + getUserToken();

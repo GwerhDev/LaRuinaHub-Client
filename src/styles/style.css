@@ -196,13 +196,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background: linear-gradient(168deg, rgb(72, 72, 72) 20%, var(--primary-color) 120%);
+  background: var(--primary-color) ;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: var(--primary-color);
-  background: linear-gradient(168deg, rgb(17, 17, 17) 20%, var(--primary-hover-color) 120%);
+  background: var(--primary-hover-color);
 }
 button:focus,
 button:focus-visible {

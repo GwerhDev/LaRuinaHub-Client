@@ -11,6 +11,10 @@
   padding-left: 4rem;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .pl-5 {
   padding-left: 5rem;
 }
@@ -132,6 +136,10 @@
   margin-top: 10rem;
 }
 
+.mw-650 {
+  max-width: 650px;
+}
+
 a {
   font-weight: 500;
   color: var(--primary-color);
@@ -143,11 +151,11 @@ a:hover {
 
 .main-container {
   width: 100%;
-  min-height: 100vh;
   margin-top: 100px;
   margin-bottom: 45px;
   border-radius: 1rem;
-  background-color: var(--primary-background-color);
+  background-color: var(--components-background);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   padding-top: 5rem;

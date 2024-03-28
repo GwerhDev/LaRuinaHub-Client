@@ -1,7 +1,6 @@
 <style scoped lang="scss" src="./NavBar.component.scss"/>
 <script setup lang="ts">  
   import Menu from '../Menu/Menu.component.vue';
-  import AppsMenu from '../AppsMenu/AppsMenu.component.vue';
   import BurgerMenu from '../BurgerMenu/BurgerMenu.component.vue';
   import userIcon from '../../../assets/png/user-icon.png';
   import { useStore } from '../../../middlewares/store';
@@ -11,7 +10,6 @@
   }
   const store = useStore();
   const currentUser: any = computed(() => store.currentUser);
-  let logged: any = computed(() => currentUser.value.logged);
 
 </script>
 
@@ -25,9 +23,6 @@
               <img width="110" src="../../../assets/png/ruina-records-logo.png" alt="">
             </router-link>
           </div>
-        </div>
-        <div v-if="logged" class="menu-container-desk">
-          <AppsMenu></AppsMenu>
         </div>
         <div class="menu-container-desk icon">
           <Menu></Menu>

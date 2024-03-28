@@ -4,7 +4,7 @@
 
 <template>
   <main class="main-container">
-    <div class="container">
+    <div class="container w-100 pl-4 pr-4 mw-650">
       <SignUp/>
     </div>
   </main>

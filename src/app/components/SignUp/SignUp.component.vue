@@ -40,7 +40,7 @@
     <div class="logo-container">
       <img class="logo" src="../../../assets/png/ruina-records-logo.png" alt="" width="300">
     </div>
-    <p>Rellena los siguientes campos:</p>
+    <h2>Rellena los siguientes campos:</h2>
     <form class="ul-form">
       <li class="li-form">
         <label>Nombre de usuario</label>

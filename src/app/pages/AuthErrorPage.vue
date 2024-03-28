@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import Auth from "../components/Auth/Auth.component.vue"
+import AuthError from "../components/AuthError/AuthError.component.vue"
 </script>
 
 <template>
   <main class="main-container">
     <div class="container">
-      <Auth/>
+      <AuthError />
     </div>
   </main>
 </template>

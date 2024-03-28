@@ -5,12 +5,18 @@ import OAuthPage from '../pages/OAuthPage.vue';
 import LandingPage from '../pages/LandingPage.vue';
 import AccountPage from '../pages/AccountPage.vue';
 import RegisterPage from '../pages/RegisterPage.vue';
+import AuthErrorPage from '../pages/AuthErrorPage.vue';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'LandingPage',
     component: LandingPage
+  },
+  {
+    path: '/auth/error',
+    name: 'AuthErrorPage',
+    component: AuthErrorPage
   },
   {
     path: '/auth/:token',

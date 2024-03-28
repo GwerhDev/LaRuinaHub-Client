@@ -1,35 +1,35 @@
 <script setup lang="ts">
-  import { API_URL } from '../../../middlewares/misc/const';
-  import { useStore } from '../../../middlewares/store/index'; 
-  import { useRouter } from 'vue-router';
-  import { onMounted, computed } from 'vue';
-  import { getUserToken } from '../../../helpers';
-  import googleIcon from '../../../assets/png/google-icon.png';
+import { API_URL } from '../../../middlewares/misc/const';
+import { useStore } from '../../../middlewares/store/index';
+import { useRouter } from 'vue-router';
+import { onMounted, computed } from 'vue';
+import { getUserToken } from '../../../helpers';
+import googleIcon from '../../../assets/png/google-icon.png';
 
-  const store: any = useStore(); 
-  const router: any = useRouter();
-  const apiUrl: string = API_URL + "/login-google";
-  const currentUser: any = computed(() => store.currentUser);
-  let email = "";
-  let password = "";
-  let token = getUserToken();
+const store: any = useStore();
+const router: any = useRouter();
+const apiUrl: string = API_URL + "/login-google";
+const currentUser: any = computed(() => store.currentUser);
+let email = "";
+let password = "";
+let token = getUserToken();
 
-  onMounted(() => {
-    if(!currentUser?.value.error && token) {
-      router.push('/account/settings/' + token);
-    }
-  });
-
-  async function handleLogin(e: any) {
-    e.preventDefault();
-    const formData: any = { email, password };
-    try {
-      const path: any = await store.handleLogin(formData);
-      router.push(path);
-    } catch (error) {
-      console.error(error)
-    }
+onMounted(() => {
+  if (!currentUser?.value.error && token) {
+    router.push('/account/settings/' + token);
   }
+});
+
+async function handleLogin(e: any) {
+  e.preventDefault();
+  const formData: any = { email, password };
+  try {
+    const path: any = await store.handleLogin(formData);
+    router.push(path);
+  } catch (error) {
+    console.error(error)
+  }
+}
 </script>
 
 <template>
@@ -37,7 +37,7 @@
     <div class="logo-container">
       <img class="logo" src="../../../assets/png/ruina-records-logo.png" alt="" width="300">
     </div>
-    <p>Rellena los siguientes campos:</p>
+    <h2>Rellena los siguientes campos:</h2>
     <form class="ul-form">
       <li class="li-form">
         <label>Correo electrónico</label>
@@ -64,4 +64,4 @@
   </div>
 </template>
 
-<style scoped lang="scss" src="./LogIn.component.scss"/>
+<style scoped lang="scss" src="./LogIn.component.scss" />

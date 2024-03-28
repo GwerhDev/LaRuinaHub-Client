@@ -28,6 +28,7 @@ export const useStore = defineStore('store', {
     },
     async handleLogin(data: any) {
       const userToken = await loginInner(data);
+      if(userToken?.error) return "/auth/error";
       setUserToken(userToken);
       const url = '/account/settings/' + userToken;
       this.userToken = userToken;
@@ -39,6 +40,7 @@ export const useStore = defineStore('store', {
         this.userToken = token;
         setUserToken(token);
       } catch (error) {
+        localStorage.clear();
         console.error(error);
       }
     },

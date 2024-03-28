@@ -8,10 +8,14 @@ import { closeMenu } from '../../../helpers/menu';
 const store = useStore();
 const token: Ref = ref("");
 const currentUser: any = computed(() => store.currentUser);
-let logged: any = computed(() => currentUser.value.logged);
+const logged: any = computed(() => currentUser.value.logged);
 const pathAccount: string = '/account/settings/';
 
-function logout() { store.logout(), closeMenu() };
+function logout() { 
+  store.logout(), 
+  closeMenu(),
+  token.value = ""
+};
 
 onMounted(() => {
   token.value = getUserToken();

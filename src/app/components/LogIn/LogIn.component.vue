@@ -51,7 +51,8 @@
     </form>
     <div class="separator-container">
       <div class="separator"></div>
-      <span class="o-separator">0</span>
+      <span>O</span>
+      <div class="separator"></div>
     </div>
     <p>puedes iniciar sesión mediante:</p>
     <a :href="apiUrl">

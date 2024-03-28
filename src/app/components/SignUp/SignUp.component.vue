@@ -58,7 +58,8 @@
     </form>
     <div class="separator-container">
       <div class="separator"></div>
-      <span class="o-separator">0</span>
+      <span>O</span>
+      <div class="separator"></div>
     </div>
     <p>puedes crear una cuenta mediante:</p>
     <a :href="apiUrl">

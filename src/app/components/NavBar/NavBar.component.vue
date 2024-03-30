@@ -6,8 +6,6 @@
   import { useStore } from '../../../middlewares/store';
   import { computed } from 'vue';
 
-  function exit() {
-  }
   const store = useStore();
   const currentUser: any = computed(() => store.currentUser);
 
@@ -19,7 +17,7 @@
       <ul class="nav-menu-ul-desk">
         <div class="icon">
           <div class="d-flex just-cent align-cent">
-            <router-link class="d-flex just-cent align-cent" @click="exit()" to='/'>
+            <router-link class="d-flex just-cent align-cent" to='/'>
               <img width="110" src="../../../assets/png/ruina-records-logo.png" alt="">
             </router-link>
           </div>

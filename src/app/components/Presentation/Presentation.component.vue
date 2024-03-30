@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import logo from "../../../assets/png/ruina-records-logo.png";
-  import streamingIcon from "../../../assets/png/streaming-icon.png";
+  import laruinatvLogo from "../../../assets/png/ruina-tv-logo.png";
   import musicIcon from "../../../assets/svg/music-icon.svg";
   import cartIcon from "../../../assets/png/cart-icon.png";
 
@@ -10,7 +10,7 @@
 
   const store = useStore();
   const currentUser: any = computed(() => store.currentUser);
-  let logged: any = computed(() => currentUser.value.logged);
+  const logged: any = computed(() => currentUser.value.logged);
 
   const urlTv: string = "https://tv.laruina.cl";
   const urlPlay: string = "https://play.laruina.cl";
@@ -28,8 +28,7 @@
   <h3>Visita nuestras aplicaciones</h3>
   <div class="app-container">
     <a class="app-card" :href="logged? loggedUrlTv : urlTv">
-      <img :src="streamingIcon" alt="">
-      <h2>La Ruina TV</h2>
+      <img :src="laruinatvLogo" alt="">
     </a>
     <a class="app-card" :href="logged? loggedUrlPlay : urlPlay">
       <img :src="musicIcon" alt="">

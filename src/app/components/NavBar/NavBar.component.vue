@@ -1,7 +1,7 @@
 <style scoped lang="scss" src="./NavBar.component.scss"/>
 <script setup lang="ts">  
   import Menu from '../Menu/Menu.component.vue';
-  import BurgerMenu from '../BurgerMenu/BurgerMenu.component.vue';
+  import NavMobile from '../NavMobile/NavMobile.component.vue';
   import userIcon from '../../../assets/png/user-icon.png';
   import { useStore } from '../../../middlewares/store';
   import { computed } from 'vue';
@@ -33,5 +33,5 @@
       </ul>
     </main>
   </div>
-  <BurgerMenu/>
+  <NavMobile/>
 </template>

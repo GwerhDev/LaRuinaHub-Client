@@ -1,4 +1,4 @@
-<style scoped lang="scss" src="./BurgerMenu.component.scss"/>
+<style scoped lang="scss" src="./NavMobile.component.scss"/>
 <script setup lang="ts">
   import { useStore } from '../../../middlewares/store';
   import { useRouter } from 'vue-router';

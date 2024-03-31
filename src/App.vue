@@ -1,5 +1,5 @@
 <script setup lang="ts"> 
-  import NavBar from './app/components/NavBar/NavBar.component.vue'; 
+  import NavBar from './app/components/Navigator/NavBar.component.vue'; 
   import { useStore } from './middlewares/store/index';
 
   const store: any = useStore();
@@ -12,4 +12,4 @@
   <template v-if="$route.path !== '/oauth/chooseaccount/' && !$route.path.startsWith('/oauth/chooseaccount/')">
     <nav-bar/> 
   </template>
-</template>
+</template>./app/components/Navigator/NavBar.component.vue./app/components/Navigator/NavBar.component.vue

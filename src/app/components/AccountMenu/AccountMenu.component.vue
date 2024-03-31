@@ -4,22 +4,19 @@ import { computed, ref, Ref, onMounted, watch } from 'vue';
 import { useStore } from '../../../middlewares/store';
 import { getUserToken } from '../../../helpers';
 import { CanvasMenuFunction, closeAccountMenu, closeMenu } from '../../../helpers/menu';
-import userIcon from '../../../assets/svg/user-icon.svg';
+import userIcon from '../../../assets/svg/user-icon.svg'
 
 const store = useStore();
 const token: Ref = ref("");
-const currentUser = computed(() => store.currentUser);
-const logged = computed(() => currentUser.value.logged);
-const pathAccount = '/account/settings/';
-const accountUrl: Ref = ref("");
+const currentUser: any = computed(() => store.currentUser);
+const logged: any = computed(() => currentUser.value.logged);
+const pathAccount: string = '/account/settings/';
+const accountUrl: Ref = ref("")
 const getAccountUrl = () => {
-  accountUrl.value = pathAccount + token.value;
-  console.log(accountUrl.value)
-};
+  accountUrl.value = pathAccount + token.value
+}
 
 getAccountUrl();
-
-watch(token.value, () => getAccountUrl());
 
 CanvasMenuFunction("#account-menu-container");
 
@@ -27,8 +24,8 @@ function logout() {
   store.logout();
   closeMenu();
   closeAccountMenu();
-  token.value = "";
-}
+  token.value = ""
+};
 
 function select() {
   closeAccountMenu();
@@ -37,6 +34,7 @@ function select() {
 
 onMounted(() => {
   token.value = getUserToken();
+
 });
 
 </script>

@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useStore } from '../../../middlewares/store/index';
 import defaultImage from '../../../assets/png/user-icon.png';
+import { closeAccountMenu } from '../../../helpers/menu';
 
 const store: any = useStore();
 const route: any = useRoute();
@@ -29,18 +30,18 @@ function activeEdit(e: any) {
 
 async function handleUpdate(e: any) {
   e.preventDefault();
-  if(profilePic === defaultImage) { profilePic = null };
+  if (profilePic === defaultImage) { profilePic = null };
   const formData: any = { username, email, profilePic };
   try {
     await store.handleUpdateUserData(formData, id.value, token);
     editActive.value = !editActive.value;
-    if(!profilePic) profilePic = defaultImage;
+    if (!profilePic) profilePic = defaultImage;
   } catch (error) {
     console.error(error)
   }
 }
 
-function handleFileUpload(e:any) {
+function handleFileUpload(e: any) {
   const file: any = e.target.files[0];
   const reader: any = new FileReader();
   reader.onloadend = (e: any) => {
@@ -50,6 +51,12 @@ function handleFileUpload(e:any) {
   }
   reader.readAsDataURL(file);
 }
+
+function logout() { 
+  store.logout(); 
+  closeAccountMenu();
+  token.value = ""
+};
 
 </script>
 
@@ -76,6 +83,9 @@ function handleFileUpload(e:any) {
         <button class="cancel-button" @click="activeEdit">Cancelar</button>
       </div>
     </form>
+    <router-link class="logout-button" to='/' @click="logout()">
+      Cerrar sesión
+    </router-link>
   </div>
 </template>
 

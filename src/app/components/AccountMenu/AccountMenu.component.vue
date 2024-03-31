@@ -3,7 +3,7 @@
 import { computed, ref, Ref, onMounted } from 'vue';
 import { useStore } from '../../../middlewares/store';
 import { getUserToken } from '../../../helpers';
-import { CanvasMenuFunction, closeAccountMenu } from '../../../helpers/menu';
+import { CanvasMenuFunction, closeAccountMenu, closeMenu } from '../../../helpers/menu';
 
 const store = useStore();
 const token: Ref = ref("");
@@ -14,10 +14,16 @@ const pathAccount: string = '/account/settings/';
 CanvasMenuFunction("#account-menu-container");
 
 function logout() { 
-  store.logout(), 
-  closeAccountMenu(),
+  store.logout(); 
+  closeMenu();
+  closeAccountMenu();
   token.value = ""
 };
+
+function select() {
+  closeAccountMenu();
+  closeMenu();
+}
 
 onMounted(() => {
   token.value = getUserToken();
@@ -28,17 +34,17 @@ onMounted(() => {
 <template>
   <ul class="account-menu-container" id="account-menu-container">
     <li v-if="!logged" class="mr-1 ml-1">
-      <router-link class="menu-text" to='/login' @click="closeAccountMenu()">
+      <router-link class="menu-text" to='/login' @click="select()">
         Iniciar sesión
       </router-link>
     </li>
     <li v-if="!logged" class="mr-1 ml-1">
-      <router-link class="menu-text" to='/register' @click="closeAccountMenu()">
+      <router-link class="menu-text" to='/register' @click="select()">
         Registrarse
       </router-link>
     </li>
     <li v-if="logged" class="mr-1 ml-1">
-      <router-link class="menu-text" :to="pathAccount + token" @click="closeAccountMenu()">
+      <router-link class="menu-text" :to="pathAccount + token" @click="select()">
         Mi cuenta
       </router-link>
     </li>

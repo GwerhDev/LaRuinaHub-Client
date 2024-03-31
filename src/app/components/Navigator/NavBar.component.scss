@@ -2,3 +2,13 @@
   width: 100vw;
   position: fixed;
 }
+
+@media (max-width: 1080px) {
+  .nav-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}

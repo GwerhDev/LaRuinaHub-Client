@@ -1,4 +1,5 @@
 .nav-menu-desk {
+  max-width: 2000px;
   padding-left: 90px;
   padding-right: 90px;
   display: flex;
@@ -90,5 +91,11 @@ input {
 @media (max-width: 1080px) {
   .nav-menu-desk {
     display: none;
+  }
+}
+
+@media (min-width: 2000px) {
+  .nav-menu-desk {
+    padding: 0;
   }
 }

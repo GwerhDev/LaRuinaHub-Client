@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import logo from "../../../assets/png/ruina-records-logo.png";
+import appIcon from "../../../assets/svg/app-icon.svg";
+import secureUserIcon from "../../../assets/svg/user-shield-icon.svg";
+import supportIcon from "../../../assets/svg/support-icon.svg";
 
 </script>
 
@@ -12,17 +15,7 @@ import logo from "../../../assets/png/ruina-records-logo.png";
   <section>
     <div class="services">
       <div class="section">
-        <img src="../../../assets/svg/user-shield-icon.svg" alt="" width="25">
-        <div class="vertical-separator"></div>
-      </div>
-      <ul>
-        <h2>Administración de cuentas "La Ruina"</h2>
-        <p>Aquí puedes gestionar los datos de tus cuentas de nuestro entorno de aplicaciones web.</p>
-      </ul>
-    </div>
-    <div class="services">
-      <div class="section">
-        <img src="../../../assets/svg/app-icon.svg" alt="" width="25">
+        <img :src="appIcon" alt="" width="25">
         <div class="vertical-separator"></div>
       </div>
       <ul>
@@ -32,7 +25,17 @@ import logo from "../../../assets/png/ruina-records-logo.png";
     </div>
     <div class="services">
       <div class="section">
-        <img src="../../../assets/svg/support-icon.svg" alt="" width="25">
+        <img :src="secureUserIcon" alt="" width="25">
+        <div class="vertical-separator"></div>
+      </div>
+      <ul>
+        <h2>Administración de cuentas "La Ruina"</h2>
+        <p>Aquí puedes gestionar los datos de tus cuentas de nuestro entorno de aplicaciones web.</p>
+      </ul>
+    </div>
+    <div class="services">
+      <div class="section">
+        <img :src="supportIcon" alt="" width="25">
         <div class="vertical-separator"></div>
       </div>
       <ul>

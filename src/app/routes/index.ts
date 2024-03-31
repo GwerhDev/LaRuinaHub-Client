@@ -6,12 +6,18 @@ import LandingPage from '../pages/LandingPage.vue';
 import AccountPage from '../pages/AccountPage.vue';
 import RegisterPage from '../pages/RegisterPage.vue';
 import AuthErrorPage from '../pages/AuthErrorPage.vue';
+import ConnectedAppsPage from '../pages/ConnectedAppsPage.vue';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'LandingPage',
     component: LandingPage
+  },
+  {
+    path: '/environment/apps',
+    name: 'ConnectedAppsPage',
+    component: ConnectedAppsPage
   },
   {
     path: '/auth/error',

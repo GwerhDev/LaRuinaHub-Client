@@ -84,10 +84,10 @@ input:active, input:hover, input:focus-visible {
 }
 
 .logout-button {
-  background-color: aliceblue;
+  border: solid grey 1px;
   width: 100%;
   margin-top: 1rem;
-  color: black;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,6 +95,6 @@ input:active, input:hover, input:focus-visible {
   padding-bottom: .3rem;
   border-radius: 5px;
   &:hover {
-    outline: 2px var(--primary-color);
+    background-color: grey;
   }
 }

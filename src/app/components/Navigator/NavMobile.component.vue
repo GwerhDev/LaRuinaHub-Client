@@ -4,7 +4,7 @@ import { useStore } from '../../../middlewares/store';
 import { useRouter } from 'vue-router';
 import { openMenu, closeMenu, openAccountMenu } from '../../../helpers/menu';
 import { upToTop } from '../../../utils/upToTop';
-import AppsMenu from '../AppsMenu/AppsMenu.component.vue';
+import Menu from '../Menu/Menu.component.vue';
 import userIcon from '../../../assets/svg/user-icon.svg';
 
 const router: any = useRouter();
@@ -43,7 +43,7 @@ function search(e: string) {
       </div>
     </div>
     <div class="menu-container">
-      <AppsMenu></AppsMenu>
+      <Menu></Menu>
     </div>
     <div class="searcher-container mt-5">
       <input type="text" @input="(e) => handleInput(e)">

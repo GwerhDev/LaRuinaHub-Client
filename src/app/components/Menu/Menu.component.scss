@@ -1,5 +1,13 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+}
+
 @media (max-width: 1080px) {
   ul {
+    gap: 1rem;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -7,18 +15,25 @@
     
     li {
       margin: 0;
-      margin-top: 1rem;
       display: flex;
       width: 100%;
     }
+  }
+
+  .menu-text {
+    width: 100%;
   }
 }
 
 .menu-text {
   color: white;
   transition-duration: .4s;
-  width: 100%;
   border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: var(--primary-hover-color);

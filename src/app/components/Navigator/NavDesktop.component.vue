@@ -4,6 +4,7 @@ import userIcon from '../../../assets/svg/user-icon.svg';
 import { openAccountMenu } from '../../../helpers/menu';
 import { useStore } from '../../../middlewares/store';
 import { computed } from 'vue';
+import Menu from '../Menu/Menu.component.vue';
 
 const store = useStore();
 const currentUser: any = computed(() => store.currentUser);
@@ -20,6 +21,7 @@ const currentUser: any = computed(() => store.currentUser);
           </router-link>
         </div>
       </div>
+      <Menu />
       <div class="menu-container-desk icon">
         <div class="nav-profile-pic-container" @click="openAccountMenu()">
           <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="30">

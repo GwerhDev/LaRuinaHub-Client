@@ -1,45 +1,46 @@
 <script setup lang="ts">
-  import logo from "../../../assets/png/ruina-records-logo.png";
-  import laruinatvLogo from "../../../assets/png/ruina-tv-logo.png";
-  import musicIcon from "../../../assets/svg/music-icon.svg";
-  import cartIcon from "../../../assets/png/cart-icon.png";
+import logo from "../../../assets/png/ruina-records-logo.png";
 
-  import { computed } from 'vue';
-  import { useStore } from '../../../middlewares/store';
-  import { getUserToken } from '../../../helpers';
-
-  const store = useStore();
-  const currentUser: any = computed(() => store.currentUser);
-  const logged: any = computed(() => currentUser.value.logged);
-
-  const urlTv: string = "https://tv.laruina.cl";
-  const urlPlay: string = "https://play.laruina.cl";
-  const urlMerch: string = "https://merch.laruina.cl";
-
-  const loggedUrlTv: string = urlTv + '/#/auth?token=' + getUserToken();
-  const loggedUrlPlay: string = urlPlay + '/#/auth?token=' + getUserToken();
 </script>
 
 <template>
-  <h1>La Ruina Hub</h1>
   <div class="logo-container">
     <img class="logo" :src="logo" alt="" width="300">
   </div>
-  <h3>Visita nuestras aplicaciones</h3>
-  <div class="app-container">
-    <a class="app-card" :href="logged? loggedUrlTv : urlTv">
-      <img :src="laruinatvLogo" alt="">
-    </a>
-    <a class="app-card" :href="logged? loggedUrlPlay : urlPlay">
-      <img :src="musicIcon" alt="">
-      <h2>La Ruina Play</h2>
-    </a>
-    <a class="app-card" :href="urlMerch">
-      <img :src="cartIcon" alt="">
-      <h2>La Ruina Merch</h2>
-    </a>
-  </div>
+  <h1>La Ruina Hub</h1>
+  <p>Centro de cuentas</p>
+  <section>
+    <div class="services">
+      <div class="section">
+        <img src="../../../assets/svg/user-shield-icon.svg" alt="" width="25">
+        <div class="vertical-separator"></div>
+      </div>
+      <ul>
+        <h2>Administración de cuentas "La Ruina"</h2>
+        <p>Aquí puedes gestionar los datos de tus cuentas de nuestro entorno de aplicaciones web.</p>
+      </ul>
+    </div>
+    <div class="services">
+      <div class="section">
+        <img src="../../../assets/svg/app-icon.svg" alt="" width="25">
+        <div class="vertical-separator"></div>
+      </div>
+      <ul>
+        <h2>Acceso a tus aplicaciones</h2>
+        <p>Navega entre nuestras aplicaciones, y descubre el contenido que tenemos disponible para ti.</p>
+      </ul>
+    </div>
+    <div class="services">
+      <div class="section">
+        <img src="../../../assets/svg/support-icon.svg" alt="" width="25">
+        <div class="vertical-separator"></div>
+      </div>
+      <ul>
+        <h2>Soporte técnico</h2>
+        <p>Puedes comunicarte con nuestro equipo para solucionar problemas y despejar dudas.</p>
+      </ul>
+    </div>
+  </section>
 </template>
 
-<style scoped lang="scss" src="./Presentation.component.scss">
-</style>
+<style scoped lang="scss" src="./Presentation.component.scss"></style>

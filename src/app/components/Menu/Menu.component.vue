@@ -19,7 +19,12 @@ import { closeMenu } from '../../../helpers/menu';
     </li>
     <li>
       <router-link class="menu-text" to="/about" @click="closeMenu()">
-        Quiénes somos
+        Soporte técnico
+      </router-link>
+    </li>
+    <li>
+      <router-link class="menu-text" to="/about" @click="closeMenu()">
+        About
       </router-link>
     </li>
   </ul>

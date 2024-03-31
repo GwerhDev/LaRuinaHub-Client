@@ -5,6 +5,21 @@ ul {
   gap: 1rem;
 }
 
+.menu-text {
+  color: white;
+  transition-duration: .4s;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: var(--primary-hover-color);
+  }
+}
+
 @media (max-width: 1080px) {
   ul {
     gap: 1rem;
@@ -22,20 +37,9 @@ ul {
 
   .menu-text {
     width: 100%;
-  }
-}
-
-.menu-text {
-  color: white;
-  transition-duration: .4s;
-  border-radius: 5px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    background-color: var(--primary-hover-color);
+    &:hover {
+      background-color: var(--primary-hover-color);
+      color: white
+    }
   }
 }

@@ -11,9 +11,6 @@ const userToken: any = computed(() => store.userToken);
 const logged: any = computed(() => currentUser.value.logged);
 const pathAccount: string = '/account/settings/';
 
-
-
-
 CanvasMenuFunction("#account-menu-container");
 
 function logout() {

@@ -2,7 +2,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useStore } from '../../../middlewares/store';
-import { openMenu, closeMenu, openAccountMenu } from '../../../helpers/menu';
+import { openMenu, closeMenu, openAccountMenu, openAppMenu } from '../../../helpers/menu';
 import Menu from '../Menu/Menu.component.vue';
 import userIcon from '../../../assets/svg/user-icon.svg';
 import appmenuIcon from '../../../assets/svg/appmenu-icon.svg';
@@ -28,7 +28,7 @@ const currentUser: any = computed(() => store.currentUser);
       </div>
 
       <div class="user-button">
-        <img :src="appmenuIcon" width="22" alt="">
+        <img :src="appmenuIcon" width="22" alt="" @click="openAppMenu()">
         <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="25" @click="openAccountMenu()">
         <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic" @click="openAccountMenu()" alt="">
       </div>

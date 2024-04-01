@@ -3,6 +3,7 @@
 import NavMobile from './NavMobile.component.vue';
 import NavDesktop from './NavDesktop.component.vue';
 import AccountMenu from '../AccountMenu/AccountMenu.component.vue';
+import AppMenu from '../AppMenu/AppMenu.component.vue';
 
 </script>
 
@@ -11,5 +12,6 @@ import AccountMenu from '../AccountMenu/AccountMenu.component.vue';
     <NavDesktop />
     <NavMobile />
     <AccountMenu />
+    <AppMenu />
   </nav>
 </template>

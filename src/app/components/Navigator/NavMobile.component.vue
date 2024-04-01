@@ -42,9 +42,8 @@ function search(e: string) {
         </router-link>
       </div>
       <div class="user-button">
-        <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="25" @click="openAccountMenu">
-        <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic" @click="openAccountMenu"
-          alt="">
+        <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="25" @click="openAccountMenu()">
+        <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic" @click="openAccountMenu()" alt="">
       </div>
     </div>
     <div class="menu-container">

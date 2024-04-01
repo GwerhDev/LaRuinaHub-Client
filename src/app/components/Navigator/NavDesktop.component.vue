@@ -25,7 +25,7 @@ const currentUser: any = computed(() => store.currentUser);
       <div class="menu-container-desk icon">
         <div class="nav-profile-pic-container" @click="openAccountMenu()">
           <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="30">
-          <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic"alt="">
+          <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic" alt="">
         </div>
       </div>
     </ul>

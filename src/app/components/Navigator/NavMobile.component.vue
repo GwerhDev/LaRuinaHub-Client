@@ -1,5 +1,6 @@
 <style scoped lang="scss" src="./NavMobile.component.scss" />
 <script setup lang="ts">
+import { computed } from 'vue';
 import { useStore } from '../../../middlewares/store';
 import { useRouter } from 'vue-router';
 import { openMenu, closeMenu, openAccountMenu } from '../../../helpers/menu';
@@ -9,6 +10,8 @@ import userIcon from '../../../assets/svg/user-icon.svg';
 
 const router: any = useRouter();
 const store: any = useStore();
+const currentUser: any = computed(() => store.currentUser);
+
 var inputValue: string;
 
 function handleInput(e: any) {
@@ -39,7 +42,9 @@ function search(e: string) {
         </router-link>
       </div>
       <div class="user-button">
-        <img :src="userIcon" alt="" height="25" @click="openAccountMenu()">
+        <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="25" @click="openAccountMenu">
+        <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic" @click="openAccountMenu"
+          alt="">
       </div>
     </div>
     <div class="menu-container">

@@ -1,6 +1,6 @@
 <style scoped lang="scss" src="./AccountMenu.component.scss" />
 <script setup lang="ts">
-import { computed, ref, Ref, onMounted, watch } from 'vue';
+import { computed, ref, Ref, onMounted } from 'vue';
 import { useStore } from '../../../middlewares/store';
 import { getUserToken } from '../../../helpers';
 import { CanvasMenuFunction, closeAccountMenu, closeMenu } from '../../../helpers/menu';
@@ -11,9 +11,10 @@ const token: Ref = ref("");
 const currentUser: any = computed(() => store.currentUser);
 const logged: any = computed(() => currentUser.value.logged);
 const pathAccount: string = '/account/settings/';
-const accountUrl: Ref = ref("")
+const accountUrl: Ref = ref("");
+
 const getAccountUrl = () => {
-  accountUrl.value = pathAccount + token.value
+  accountUrl.value = pathAccount + token.value;
 }
 
 getAccountUrl();
@@ -24,17 +25,17 @@ function logout() {
   store.logout();
   closeMenu();
   closeAccountMenu();
-  token.value = ""
+  token.value = "";
 };
 
 function select() {
   closeAccountMenu();
   closeMenu();
-}
+};
 
 onMounted(() => {
   token.value = getUserToken();
-
+  getAccountUrl();
 });
 
 </script>

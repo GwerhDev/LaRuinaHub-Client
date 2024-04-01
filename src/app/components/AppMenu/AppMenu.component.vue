@@ -10,9 +10,9 @@ const store = useStore();
 const currentUser: any = computed(() => store.currentUser);
 const token: any = computed(() => store.userToken);
 const logged: any = computed(() => currentUser.value.logged);
-const laruinatvUrl: Ref = ref("https://tv.laruinarecords.cl");
-const laruinaplayUrl: Ref = ref("https://play.laruinarecords.cl");
-const laruinamerchUrl: Ref = ref("https://merch.laruinarecords.cl");
+const laruinatvUrl: Ref = ref("https://tv.laruina.cl");
+const laruinaplayUrl: Ref = ref("https://play.laruina.cl");
+const laruinamerchUrl: Ref = ref("https://merch.laruina.cl");
 
 CanvasMenuFunction("#app-menu-container");
 

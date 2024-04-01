@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import logo from "../../../assets/png/ruina-records-logo.png";
-import appIcon from "../../../assets/svg/app-icon.svg";
+import appIcon from "../../../assets/svg/appstab-icon.svg";
 import secureUserIcon from "../../../assets/svg/user-shield-icon.svg";
 import supportIcon from "../../../assets/svg/support-icon.svg";
 

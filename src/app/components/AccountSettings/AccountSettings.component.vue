@@ -2,12 +2,13 @@
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useStore } from '../../../middlewares/store/index';
-import defaultImage from '../../../assets/png/user-icon.png';
 import { closeAccountMenu } from '../../../helpers/menu';
+import defaultImage from '../../../assets/svg/user-icon.svg';
 
 const store: any = useStore();
 const route: any = useRoute();
 const token: any = route.params.token;
+
 store.handleUserData(token);
 
 const currentUser: any = computed(() => store.currentUser);
@@ -32,6 +33,7 @@ async function handleUpdate(e: any) {
   e.preventDefault();
   if (profilePic === defaultImage) { profilePic = null };
   const formData: any = { username, email, profilePic };
+
   try {
     await store.handleUpdateUserData(formData, id.value, token);
     editActive.value = !editActive.value;
@@ -49,13 +51,13 @@ function handleFileUpload(e: any) {
     const imageSrc: any = pic;
     profilePic = imageSrc;
   }
+
   reader.readAsDataURL(file);
 }
 
 function logout() { 
   store.logout(); 
   closeAccountMenu();
-  token.value = ""
 };
 
 </script>
@@ -65,7 +67,7 @@ function logout() {
     <div class="profile-pic-container">
       <img class="profile-pic" :src="profilePic" alt="" width="300">
     </div>
-    <input v-if="editActive" v-on:input="handleFileUpload" type="file" />
+    <input v-if="editActive" @input="handleFileUpload" type="file" />
     <h2>Datos del usuario</h2>
     <div v-if="!logged" class="loader"></div>
     <form class="ul-form" v-if="logged">
@@ -83,7 +85,7 @@ function logout() {
         <button class="cancel-button" @click="activeEdit">Cancelar</button>
       </div>
     </form>
-    <router-link class="logout-button" to='/' @click="logout()">
+    <router-link class="logout-button" to='/' @click="logout">
       Cerrar sesión
     </router-link>
   </div>

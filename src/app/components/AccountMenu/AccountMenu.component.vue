@@ -1,23 +1,18 @@
 <style scoped lang="scss" src="./AccountMenu.component.scss" />
 <script setup lang="ts">
-import { computed, ref, Ref, onMounted } from 'vue';
+import { computed } from 'vue';
 import { useStore } from '../../../middlewares/store';
-import { getUserToken } from '../../../helpers';
 import { CanvasMenuFunction, closeAccountMenu, closeMenu } from '../../../helpers/menu';
 import userIcon from '../../../assets/svg/user-icon.svg'
 
 const store = useStore();
-const token: Ref = ref("");
 const currentUser: any = computed(() => store.currentUser);
+const userToken: any = computed(() => store.userToken);
 const logged: any = computed(() => currentUser.value.logged);
 const pathAccount: string = '/account/settings/';
-const accountUrl: Ref = ref("");
 
-const getAccountUrl = () => {
-  accountUrl.value = pathAccount + token.value;
-}
 
-getAccountUrl();
+
 
 CanvasMenuFunction("#account-menu-container");
 
@@ -25,18 +20,12 @@ function logout() {
   store.logout();
   closeMenu();
   closeAccountMenu();
-  token.value = "";
 };
 
 function select() {
   closeAccountMenu();
   closeMenu();
 };
-
-onMounted(() => {
-  token.value = getUserToken();
-  getAccountUrl();
-});
 
 </script>
 
@@ -59,7 +48,7 @@ onMounted(() => {
     </li>
     <div class="separator"></div>
     <li v-if="logged">
-      <router-link class="menu-text principal-button" :to="accountUrl" @click="select()">
+      <router-link class="menu-text principal-button" :to="pathAccount + userToken" @click="select()">
         Administrar cuenta
       </router-link>
     </li>

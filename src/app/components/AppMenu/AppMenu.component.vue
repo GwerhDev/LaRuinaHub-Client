@@ -25,7 +25,7 @@ function select() {
 
 <template>
   <ul class="app-menu-container" id="app-menu-container">
-    <li class="current-user-data" v-if="logged">
+    <li class="current-user-data">
       <img :src="appstabIcon" alt="">
       <h4>Apps</h4>
     </li>

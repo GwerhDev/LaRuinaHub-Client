@@ -1,4 +1,4 @@
-import { RouteRecordRaw, createRouter, createWebHashHistory } from 'vue-router';
+import { RouteRecordRaw, createRouter, createWebHistory  } from 'vue-router';
 import AuthPage from '../pages/AuthPage.vue';
 import LoginPage from '../pages/LoginPage.vue';
 import OAuthPage from '../pages/OAuthPage.vue';
@@ -52,7 +52,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory (),
   routes
 });
 

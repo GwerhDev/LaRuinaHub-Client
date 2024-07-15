@@ -30,10 +30,10 @@ function select() {
       <h4>Apps</h4>
     </li>
     <div class="separator"></div>
-    <a :href="logged? laruinatvUrl + '/#/auth?token=' +  token : laruinatvUrl" class="app-card-container" @click="select">
+    <a :href="logged? laruinatvUrl + '/auth?token=' +  token : laruinatvUrl" class="app-card-container" @click="select">
       <img :src="laruinatvLogo" alt="" height="30">
     </a>
-    <a :href="logged? laruinaplayUrl + '/#/auth?token=' +  token : laruinaplayUrl" class="app-card-container" @click="select">
+    <a :href="logged? laruinaplayUrl + '/auth?token=' +  token : laruinaplayUrl" class="app-card-container" @click="select">
       La Ruina Play
     </a>
     <a :href="laruinamerchUrl" class="app-card-container" @click="select">

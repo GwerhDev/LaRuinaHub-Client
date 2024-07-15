@@ -16,8 +16,8 @@ const urlTv: string = "https://tv.laruina.cl";
 const urlPlay: string = "https://play.laruina.cl";
 const urlMerch: string = "https://merch.laruina.cl";
 
-const loggedUrlTv: string = urlTv + '/#/auth?token=' + getUserToken();
-const loggedUrlPlay: string = urlPlay + '/#/auth?token=' + getUserToken();
+const loggedUrlTv: string = urlTv + '/auth?token=' + getUserToken();
+const loggedUrlPlay: string = urlPlay + '/auth?token=' + getUserToken();
 </script>
 
 <template>

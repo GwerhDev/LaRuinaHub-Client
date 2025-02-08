@@ -1,8 +1,6 @@
 <style scoped lang="scss" src="./MenuMobile.component.scss" />
 <script setup lang="ts">
 import { closeMenu } from '../../../helpers/menu';
-import LateralButton from '../Navigator/LateralButton.component.vue';
-
 </script>
 
 <template>

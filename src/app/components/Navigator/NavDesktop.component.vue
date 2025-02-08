@@ -5,6 +5,7 @@ import appmenuIcon from '../../../assets/svg/appmenu-icon.svg';
 import { openAccountMenu, openAppMenu } from '../../../helpers/menu';
 import { useStore } from '../../../middlewares/store';
 import { computed } from 'vue';
+import Logo from '../Logo/Logo.component.vue';
 import Menu from '../Menu/Menu.component.vue';
 
 const store = useStore();
@@ -18,7 +19,9 @@ const currentUser: any = computed(() => store.currentUser);
       <div class="icon">
         <div class="d-flex just-cent align-cent">
           <router-link class="d-flex just-cent align-cent" to='/'>
-            <img width="110" src="../../../assets/png/ruina-records-logo.png" alt="">
+            <span class="logo">
+              <Logo />
+            </span>
           </router-link>
         </div>
       </div>
@@ -27,7 +30,8 @@ const currentUser: any = computed(() => store.currentUser);
         <img :src="appmenuIcon" width="28" alt="" @click="openAppMenu()">
         <div class="nav-profile-pic-container" @click="openAccountMenu()">
           <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="30">
-          <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic" alt="">
+          <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic"
+            alt="">
         </div>
       </div>
     </ul>

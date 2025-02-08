@@ -3,6 +3,7 @@
 import { computed } from 'vue';
 import { useStore } from '../../../middlewares/store';
 import { openMenu, closeMenu, openAccountMenu, openAppMenu } from '../../../helpers/menu';
+import Logo from '../Logo/Logo.component.vue';
 import Menu from '../Menu/Menu.component.vue';
 import userIcon from '../../../assets/svg/user-icon.svg';
 import appmenuIcon from '../../../assets/svg/appmenu-icon.svg';
@@ -22,9 +23,7 @@ const currentUser: any = computed(() => store.currentUser);
         <div class="close-menu-container" alt="">
           <img src="../../../assets/svg/close-icon.svg" @click="closeMenu()" alt="">
         </div>
-        <router-link class="d-flex align-cent logo-image-container" to='/'>
-          <img src="../../../assets/png/ruina-records-logo.png" @click="closeMenu()" width="100" alt="">
-        </router-link>
+        <Logo />
       </div>
 
       <div class="user-button">

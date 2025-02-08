@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router';
 import { onMounted, computed, Ref, ref } from 'vue';
 import { getUserToken } from '../../../helpers';
 import googleIcon from '../../../assets/png/google-icon.png';
+import LogoHeader from '../Logo/LogoHeader.component.vue'
 
 const token: Ref = ref("");
 const store: any = useStore();
@@ -35,9 +36,7 @@ async function handleLogin(e: any) {
 
 <template>
   <div class="form-container">
-    <div class="logo-container">
-      <img class="logo" src="../../../assets/png/ruina-records-logo.png" alt="" width="300">
-    </div>
+    <LogoHeader />
     <h2>Rellena los siguientes campos:</h2>
     <form class="ul-form">
       <li class="li-form">

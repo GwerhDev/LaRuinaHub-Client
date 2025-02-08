@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import logo from "../../../assets/png/ruina-records-logo.png";
+import logo from "../../../assets/svg/laruinarecords-logo.svg";
 import appIcon from "../../../assets/svg/appstab-icon.svg";
 import secureUserIcon from "../../../assets/svg/user-shield-icon.svg";
 import supportIcon from "../../../assets/svg/support-icon.svg";
+import LogoHeader from "../Logo/LogoHeader.component.vue";
 
 </script>
 
 <template>
-  <div class="logo-container">
-    <img class="logo" :src="logo" alt="" width="300">
-  </div>
-  <h1>La Ruina Hub</h1>
+  <LogoHeader />
   <p>Centro de cuentas</p>
   <section>
     <div class="services">

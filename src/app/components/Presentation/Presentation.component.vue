@@ -7,8 +7,8 @@ import LogoHeader from "../Logo/LogoHeader.component.vue";
 </script>
 
 <template>
-  <LogoHeader />
   <section>
+    <LogoHeader />
     <div class="services">
       <div class="section">
         <img :src="appIcon" alt="" width="25">

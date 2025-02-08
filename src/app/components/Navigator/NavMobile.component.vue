@@ -23,7 +23,7 @@ const currentUser: any = computed(() => store.currentUser);
         <div class="close-menu-container" alt="">
           <img src="../../../assets/svg/close-icon.svg" @click="closeMenu()" alt="">
         </div>
-        <Logo />
+        <Logo :width="40" />
       </div>
 
       <div class="user-button">

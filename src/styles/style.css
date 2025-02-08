@@ -336,7 +336,7 @@ input:disabled {
 .vertical-separator {
   width: 2px;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.61), var(--primary-color), transparent);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.61), var(--primary-hover-color), transparent);
 }
 
 .separator {

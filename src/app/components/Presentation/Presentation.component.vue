@@ -8,7 +8,6 @@ import LogoHeader from "../Logo/LogoHeader.component.vue";
 
 <template>
   <LogoHeader />
-  <p>Centro de cuentas</p>
   <section>
     <div class="services">
       <div class="section">

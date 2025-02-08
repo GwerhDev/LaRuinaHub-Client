@@ -12,15 +12,18 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: var(--primary-color);
   background: linear-gradient(168deg, #171717 20%, var(--primary-color) 120%);
+  background-attachment: fixed;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  --primary-color: rgb(78, 56, 111);
-  --primary-hover-color: rgb(136, 93, 255);
+  --primary-color: #5b282f;
+  --primary-hover-color: #b5964f;
   --primary-background-color: #171717;
+  --secondary-color: #a08851;
+  --secondary-hover-color: #5c5136;
   --components-background: #1b1b1bba;
 }
 

@@ -1,15 +1,17 @@
 .nav-container {
+  margin: 0;
+  padding: 0;
   width: 100vw;
-  max-width: 2000px;
-  position: fixed;
+  display: flex;
+  background-color: var(--components-background);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 780px) {
   .nav-container {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    position: fixed;
+    z-index: 9;
+    height: auto;
+    top: 0;
+    left: 0;
   }
 }

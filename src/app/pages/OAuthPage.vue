@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <main class="main-container no-bg">
+  <main class="no-bg">
     <ChooseAccount/>
   </main>
 </template>

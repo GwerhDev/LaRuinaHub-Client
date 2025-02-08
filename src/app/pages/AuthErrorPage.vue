@@ -4,8 +4,6 @@ import AuthError from "../components/AuthError/AuthError.component.vue"
 
 <template>
   <main class="main-container">
-    <div class="container">
-      <AuthError />
-    </div>
+    <AuthError />
   </main>
 </template>

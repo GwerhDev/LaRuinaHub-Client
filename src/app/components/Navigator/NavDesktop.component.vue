@@ -1,39 +1,30 @@
 <style scoped lang="scss" src="./NavDesktop.component.scss" />
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useStore } from '../../../middlewares/store';
+import { openMenu, closeMenu, openAccountMenu, openAppMenu } from '../../../helpers/menu';
+import Logo from '../Logo/Logo.component.vue';
 import userIcon from '../../../assets/svg/user-icon.svg';
 import appmenuIcon from '../../../assets/svg/appmenu-icon.svg';
-import { openAccountMenu, openAppMenu } from '../../../helpers/menu';
-import { useStore } from '../../../middlewares/store';
-import { computed } from 'vue';
-import Logo from '../Logo/Logo.component.vue';
-import Menu from '../Menu/Menu.component.vue';
 
-const store = useStore();
+const store: any = useStore();
 const currentUser: any = computed(() => store.currentUser);
 
 </script>
 
 <template>
-  <main class="nav-menu-desk">
-    <ul class="nav-menu-ul-desk">
-      <div class="icon">
-        <div class="d-flex just-cent align-cent">
-          <router-link class="d-flex just-cent align-cent" to='/'>
-            <span class="logo">
-              <Logo />
-            </span>
-          </router-link>
-        </div>
+  <nav class="nav-desk-container">
+    <div class="d-flex align-cent logo-container">
+      <div class="d-flex align-cent logo-cont">
+        <Logo />
       </div>
-      <Menu />
-      <div class="menu-container-desk icon">
-        <img :src="appmenuIcon" width="28" alt="" @click="openAppMenu()">
-        <div class="nav-profile-pic-container" @click="openAccountMenu()">
-          <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="30">
-          <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic"
-            alt="">
-        </div>
+
+      <div class="user-button">
+        <img :src="appmenuIcon" width="22" alt="" @click="openAppMenu()">
+        <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="25" @click="openAccountMenu()">
+        <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic"
+          @click="openAccountMenu()" alt="">
       </div>
-    </ul>
-  </main>
+    </div>
+  </nav>
 </template>

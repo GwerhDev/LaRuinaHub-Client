@@ -22,19 +22,21 @@ const loggedUrlPlay: string = urlPlay + '/auth?token=' + getUserToken();
 
 <template>
   <section class="section-container">
-    <h2>Visita nuestras aplicaciones</h2>
-    <div class="app-container">
-      <a class="app-card" :href="logged ? loggedUrlTv : urlTv">
-        <img :src="laruinatvLogo" alt="">
-      </a>
-      <a class="app-card" :href="logged ? loggedUrlPlay : urlPlay">
-        <img :src="musicIcon" alt="">
-        <h2>La Ruina Play</h2>
-      </a>
-      <a class="app-card" :href="urlMerch">
-        <img :src="cartIcon" alt="">
-        <h2>La Ruina Merch</h2>
-      </a>
+    <div class="inner-container">
+      <h2>Visita nuestras aplicaciones</h2>
+      <div class="app-container">
+        <a class="app-card" :href="logged ? loggedUrlTv : urlTv">
+          <img :src="laruinatvLogo" alt="">
+        </a>
+        <a class="app-card" :href="logged ? loggedUrlPlay : urlPlay">
+          <img :src="musicIcon" alt="">
+          <h2>La Ruina Play</h2>
+        </a>
+        <a class="app-card" :href="urlMerch">
+          <img :src="cartIcon" alt="">
+          <h2>La Ruina Merch</h2>
+        </a>
+      </div>
     </div>
   </section>
 </template>

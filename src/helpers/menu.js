@@ -8,7 +8,7 @@ export function openMenu() {
 }
 
 export function closeMenu() {
-  $d(".nav-menu-ul").style.height="2.5rem";
+  $d(".nav-menu-ul").style.height="auto";
   $d(".menu-container").style.display="none";
   $d(".close-menu-container").style.display="none";
   $d(".burger-menu-container").style.display="flex";

@@ -1,0 +1,26 @@
+.burger-menu-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    cursor: pointer;
+  }
+}
+
+.close-menu-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  img:hover {
+    cursor: pointer;
+  }
+}

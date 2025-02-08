@@ -4,8 +4,8 @@ import { computed } from 'vue';
 import { useStore } from '../../../middlewares/store';
 import { openMenu, closeMenu, openAccountMenu, openAppMenu } from '../../../helpers/menu';
 import Logo from '../Logo/Logo.component.vue';
-import Menu from '../Menu/Menu.component.vue';
 import userIcon from '../../../assets/svg/user-icon.svg';
+import MenuMobile from '../Menu/MenuMobile.component.vue';
 import appmenuIcon from '../../../assets/svg/appmenu-icon.svg';
 
 const store: any = useStore();
@@ -29,11 +29,12 @@ const currentUser: any = computed(() => store.currentUser);
       <div class="user-button">
         <img :src="appmenuIcon" width="22" alt="" @click="openAppMenu()">
         <img v-if="!currentUser?.userData?.profilePic" :src="userIcon" alt="" width="25" @click="openAccountMenu()">
-        <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic" @click="openAccountMenu()" alt="">
+        <img class="profile-pic" v-if="currentUser?.userData?.profilePic" :src="currentUser?.userData?.profilePic"
+          @click="openAccountMenu()" alt="">
       </div>
     </div>
     <div class="menu-container">
-      <Menu></Menu>
+      <MenuMobile></MenuMobile>
     </div>
   </ul>
 </template>

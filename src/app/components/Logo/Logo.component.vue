@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <router-link class="d-flex align-cent logotype" to='/'>
-    <img src="../../../assets/svg/laruinarecords-logo.svg" @click="closeMenu()" :width="width || 80" alt="">
+    <img src="../../../assets/svg/laruinarecords-logo.svg" @click="closeMenu()" :width="width || '80'" alt="">
     <p class="type">LA RUINA</p>
   </router-link>
 </template>

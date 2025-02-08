@@ -2,7 +2,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useStore } from '../../../middlewares/store';
-import { openMenu, openAccountMenu, openAppMenu } from '../../../helpers/menu';
+import { openAccountMenu, openAppMenu } from '../../../helpers/menu';
 import Logo from '../Logo/Logo.component.vue';
 import userIcon from '../../../assets/svg/user-icon.svg';
 import appmenuIcon from '../../../assets/svg/appmenu-icon.svg';

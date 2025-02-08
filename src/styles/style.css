@@ -285,6 +285,8 @@ button:disabled:hover {
 .view-lateral-bar {
   height: 100%;
   background-color: var(--components-background);
+  padding-top: 1rem;
+  padding-right: 1rem;
 }
 
 @media (max-width: 780px) {

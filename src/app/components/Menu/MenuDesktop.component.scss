@@ -1,18 +1,9 @@
-.container {
-  gap: 1rem;
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .lateral-menu-text {
   gap: 1rem;
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 100%;
   transition-duration: .4s;
   display: flex;
   overflow-y: auto;

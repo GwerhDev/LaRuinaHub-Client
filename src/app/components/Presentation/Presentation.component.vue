@@ -11,8 +11,9 @@ const store = useStore();
 const currentUser: any = computed(() => store.currentUser);
 let logged: any = computed(() => currentUser.value.logged);
 let username: any = computed(() => currentUser.value.userData?.username);
-let profilePic: any = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);const token: any = computed(() => store.userToken);
-store.handleUserData(token);
+let profilePic: any = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);
+const token: any = computed(() => store.userToken);
+token && await store.handleUserData(token);
 
 </script>
 
@@ -21,9 +22,10 @@ store.handleUserData(token);
     <div v-if="logged" class="presentation">
       <span>¡Hola <h1>{{ username }}!</h1></span>
       <div>
-        <img class="profile-pic" :src="profilePic"  width="150" alt="">
+        <img class="profile-pic" :src="profilePic" width="150" alt="">
       </div>
-      <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para ti.</p>
+      <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para
+        ti.</p>
     </div>
     <div class="presentation" v-else>
       <LogoHeader />

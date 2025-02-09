@@ -5,7 +5,7 @@ import { useStore } from './middlewares/store/index';
 
 const store: any = useStore();
 const token: any = localStorage.getItem('userToken');
-store.handleUserData(token);
+token && await store.handleUserData(token);
 </script>
 
 <template>

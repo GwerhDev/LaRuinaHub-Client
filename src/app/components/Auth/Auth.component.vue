@@ -7,9 +7,9 @@ import { useRoute, useRouter } from 'vue-router';
 const store: any = useStore();
 const route: any = useRoute();
 const router: any = useRouter();
-const userToken: any = route.params.token;
+const token: any = route.params.token;
 
-await store.handleUserData(userToken);
+token && await store.handleUserData(token);
 
 router.push("/");
 

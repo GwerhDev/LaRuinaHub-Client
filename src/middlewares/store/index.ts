@@ -30,15 +30,14 @@ export const useStore = defineStore('store', {
       const userToken = await loginInner(data);
       if(userToken?.error) return "/auth/error";
       setUserToken(userToken);
-      const url = '/account/settings/' + userToken;
+      const url = '/';
       this.userToken = userToken;
       return url;
     },
     async handleUserData(token: any) {
       try {
-        this.userToken = token;
         this.currentUser = await getUserData(token);
-        setUserToken(token);
+        this.userToken = token;
       } catch (error) {
         localStorage.clear();
         console.error(error);

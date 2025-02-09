@@ -68,8 +68,9 @@ input:active, input:hover, input:focus-visible {
 .profile-pic {
   width: 100%;
   height: 100%;
-  border: none;
+  max-width: 150px;
   border-radius: 50%;
+  border: none;
 }
 
 .edit-buttons-container {

@@ -10,16 +10,18 @@ import { useStore } from '../../../middlewares/store';
 const store = useStore();
 const currentUser: any = computed(() => store.currentUser);
 const logged: any = computed(() => currentUser.value.logged);
+const token: any = computed(() => store.userToken);
+store.handleUserData(token);
 
 </script>
 
 <template>
   <section>
     <div v-if="logged" class="presentation">
+      <span>¡Hola <h1>{{ currentUser?.username }}!</h1></span>
       <div>
         <img :src="currentUser.username || defaultImage"  width="150" alt="">
       </div>
-      <span>¡Hola <h1>{{ currentUser?.username }}!</h1></span>
       <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para ti.</p>
     </div>
     <div class="presentation" v-else>

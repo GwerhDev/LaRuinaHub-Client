@@ -27,7 +27,7 @@ let profilePic: any = computed(() => currentUser.value.userData?.profilePic ?? d
     </div>
     <div class="presentation" v-else>
       <LogoHeader />
-      <p>¡Hola! Bienvenido a la plataforma de administración de "La Ruina". Aquí encontrarás:</p>
+      <p>Bienvenido a la plataforma de administración de "La Ruina". Aquí encontrarás:</p>
     </div>
     <LogoHeader v-if="logged" />
     <div class="services">

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { API_URL } from '../../../middlewares/misc/const';
-import { useStore } from '../../../middlewares/store/index';
 import { useRouter } from 'vue-router';
 import { onMounted, computed, Ref, ref } from 'vue';
+import { API_URL } from '../../../middlewares/misc/const';
+import { useStore } from '../../../middlewares/store/index';
 import { getUserToken } from '../../../helpers';
+import LogoHeader from '../Logo/LogoHeader.component.vue';
 import googleIcon from '../../../assets/png/google-icon.png';
-import LogoHeader from '../Logo/LogoHeader.component.vue'
 
 const token: Ref = ref("");
 const store: any = useStore();

@@ -23,6 +23,7 @@ onMounted(() => {
     router.push('/');
   }
 });
+
 async function handleRegister(e: any) {
   e.preventDefault();
   const formData: any = { username, email, password };

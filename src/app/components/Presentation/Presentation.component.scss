@@ -28,3 +28,12 @@ section {
     }
   }
 }
+
+.buttons-container {
+  display: flex;
+  gap: 1rem;
+  
+  button {
+    width: 100%;
+  }
+}

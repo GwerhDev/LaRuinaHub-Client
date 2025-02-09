@@ -293,6 +293,10 @@ button:disabled:hover {
   }
 }
 
+.w-full {
+  width: 100%;
+}
+
 .router-view {
   width: 100%;
   height: 100%;
@@ -303,6 +307,17 @@ button:disabled:hover {
   border-top-left-radius: 2rem;
   background: linear-gradient(168deg, #171717 20%, var(--primary-color) 120%);
   background-attachment: fixed;
+}
+
+.secondary-button {
+  border: solid grey 1px;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+  background-color: transparent;
+}
+
+.secondary-button:hover {
+  background-color: grey;
 }
 
 @media (max-width: 780px) {

@@ -1,14 +1,29 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import appIcon from "../../../assets/svg/appstab-icon.svg";
 import secureUserIcon from "../../../assets/svg/user-shield-icon.svg";
 import supportIcon from "../../../assets/svg/support-icon.svg";
 import LogoHeader from "../Logo/LogoHeader.component.vue";
+import { useStore } from '../../../middlewares/store';
+
+const store = useStore();
+const currentUser: any = computed(() => store.currentUser);
+const logged: any = computed(() => currentUser.value.logged);
 
 </script>
 
 <template>
-  <section>
+  <div v-if="logged" class="presentation">
+    <span>¡Hola <h1>{{ currentUser?.name }}!</h1></span>
+    <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para ti.</p>
+  </div>
+  <div class="presentation" v-else>
     <LogoHeader />
+    <p>¡Hola! Bienvenido a la plataforma de administración de "La Ruina". Aquí encontrarás:</p>
+  </div>
+
+  <section>
+    <LogoHeader v-if="logged" />
     <div class="services">
       <div class="section">
         <img :src="appIcon" alt="" width="25">
@@ -39,7 +54,21 @@ import LogoHeader from "../Logo/LogoHeader.component.vue";
         <p>Puedes comunicarte con nuestro equipo para solucionar problemas y despejar dudas.</p>
       </ul>
     </div>
+    <span class="buttons-container w-full" v-if="!logged">
+      <router-link class="w-full" to='/login'>
+        <button class="w-full principal-button">
+          Iniciar sesión
+        </button>
+      </router-link>
+      <router-link class="w-full" to='/register'>
+        <button class="w-full secondary-button">
+          Registrarse
+        </button>
+      </router-link>
+    </span>
   </section>
+
+
 </template>
 
 <style scoped lang="scss" src="./Presentation.component.scss"></style>

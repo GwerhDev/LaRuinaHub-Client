@@ -9,7 +9,7 @@ const store: any = useStore();
 const route: any = useRoute();
 const token: any = route.params.token;
 
-token && await store.handleUserData(token);
+token && store.handleUserData(token);
 
 const currentUser: any = computed(() => store.currentUser);
 let logged: any = computed(() => currentUser.value.logged);

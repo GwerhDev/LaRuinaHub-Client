@@ -9,7 +9,7 @@ const route: any = useRoute();
 const router: any = useRouter();
 const token: any = route.params.token;
 
-token && await store.handleUserData(token);
+token && store.handleUserData(token);
 
 router.push("/");
 

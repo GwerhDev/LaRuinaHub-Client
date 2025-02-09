@@ -13,7 +13,7 @@ let logged: any = computed(() => currentUser.value.logged);
 let username: any = computed(() => currentUser.value.userData?.username);
 let profilePic: any = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);
 const token: any = computed(() => store.userToken);
-token && await store.handleUserData(token);
+token && store.handleUserData(token);
 
 </script>
 

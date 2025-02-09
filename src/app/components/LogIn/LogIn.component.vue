@@ -18,7 +18,7 @@ let password = "";
 onMounted(() => {
   token.value = getUserToken();
   if (!currentUser?.value.error && token.value) {
-    router.push('/account/settings/' + token.value);
+    router.push('/');
   }
 });
 

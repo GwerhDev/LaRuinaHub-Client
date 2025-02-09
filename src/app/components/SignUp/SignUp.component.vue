@@ -1,39 +1,38 @@
 <script setup lang="ts">
-  import { API_URL } from '../../../middlewares/misc/const';
-  import { useStore } from '../../../middlewares/store/index'; 
-  import { useRouter } from 'vue-router';
-  import { onMounted, computed, Ref, ref } from 'vue';
-  import { getUserToken } from '../../../helpers';
-  import googleIcon from '../../../assets/png/google-icon.png';
-  import LogoHeader from '../Logo/LogoHeader.component.vue';
+import { API_URL } from '../../../middlewares/misc/const';
+import { useStore } from '../../../middlewares/store/index';
+import { useRouter } from 'vue-router';
+import { onMounted, computed, Ref, ref } from 'vue';
+import { getUserToken } from '../../../helpers';
+import googleIcon from '../../../assets/png/google-icon.png';
+import LogoHeader from '../Logo/LogoHeader.component.vue';
 
-  const token: Ref = ref("");
-  const store: any = useStore(); 
-  const router: any = useRouter();
-  const apiUrl: string = API_URL + "/signup-google";
-  const currentUser: any = computed(() => store.currentUser);
+const token: Ref = ref("");
+const store: any = useStore();
+const router: any = useRouter();
+const apiUrl: string = API_URL + "/signup-google";
+const currentUser: any = computed(() => store.currentUser);
 
-  let username = "";
-  let email = "";
-  let password = "";
+let username = "";
+let email = "";
+let password = "";
 
-  onMounted(() => {
-    token.value = getUserToken();
-    if(!currentUser?.value.error && token.value) {
-      router.push('/account/settings/' + token);
-    }
-  });
-
-  async function handleRegister(e: any) {
-    e.preventDefault();
-    const formData: any = { username, email, password };
-    try {
-      const path: any = await store.handleRegister(formData);
-      router.push(path);
-    } catch (error) {
-      console.error(error)
-    }
+onMounted(() => {
+  token.value = getUserToken();
+  if (!currentUser?.value.error && token.value) {
+    router.push('/');
   }
+});
+async function handleRegister(e: any) {
+  e.preventDefault();
+  const formData: any = { username, email, password };
+  try {
+    const path: any = await store.handleRegister(formData);
+    router.push(path);
+  } catch (error) {
+    console.error(error)
+  }
+}
 
 </script>
 
@@ -71,5 +70,4 @@
   </div>
 </template>
 
-<style scoped lang="scss" src="./SignUp.component.scss">
-</style>
+<style scoped lang="scss" src="./SignUp.component.scss"></style>

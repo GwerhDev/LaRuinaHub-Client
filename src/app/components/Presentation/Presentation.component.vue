@@ -9,8 +9,9 @@ import { useStore } from '../../../middlewares/store';
 
 const store = useStore();
 const currentUser: any = computed(() => store.currentUser);
-const logged: any = computed(() => currentUser.value.logged);
-const token: any = computed(() => store.userToken);
+let logged: any = computed(() => currentUser.value.logged);
+let username: any = computed(() => currentUser.value.userData?.username);
+let profilePic: any = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);const token: any = computed(() => store.userToken);
 store.handleUserData(token);
 
 </script>
@@ -18,9 +19,9 @@ store.handleUserData(token);
 <template>
   <section>
     <div v-if="logged" class="presentation">
-      <span>¡Hola <h1>{{ currentUser?.username }}!</h1></span>
+      <span>¡Hola <h1>{{ username }}!</h1></span>
       <div>
-        <img :src="currentUser.username || defaultImage"  width="150" alt="">
+        <img :src="profilePic"  width="150" alt="">
       </div>
       <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para ti.</p>
     </div>

@@ -12,8 +12,6 @@ const currentUser: any = computed(() => store.currentUser);
 let logged: any = computed(() => currentUser.value.logged);
 let username: any = computed(() => currentUser.value.userData?.username);
 let profilePic: any = computed(() => currentUser.value.userData?.profilePic ?? defaultImage);
-const token: any = computed(() => store.userToken);
-token && store.handleUserData(token);
 
 </script>
 

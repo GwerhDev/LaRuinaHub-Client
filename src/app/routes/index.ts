@@ -4,6 +4,7 @@ import LoginPage from '../pages/LoginPage.vue';
 import OAuthPage from '../pages/OAuthPage.vue';
 import LandingPage from '../pages/LandingPage.vue';
 import AccountPage from '../pages/AccountPage.vue';
+import SupportPage from '../pages/SupportPage.vue';
 import RegisterPage from '../pages/RegisterPage.vue';
 import AuthErrorPage from '../pages/AuthErrorPage.vue';
 import ConnectedAppsPage from '../pages/ConnectedAppsPage.vue';
@@ -48,6 +49,11 @@ const routes: RouteRecordRaw[] = [
     path: '/oauth/chooseaccount/:redirect_uri',
     name: 'OAuth',
     component: OAuthPage
+  },
+  {
+    path: '/support',
+    name: 'SupportPage',
+    component: SupportPage
   },
 ]
 

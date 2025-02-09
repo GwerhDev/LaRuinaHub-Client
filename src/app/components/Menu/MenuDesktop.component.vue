@@ -39,7 +39,7 @@ import { closeMenu } from '../../../helpers/menu';
       </router-link>
     </li>
     <li>
-      <router-link class="lateral-menu-link" to="/about" @click="closeMenu()">
+      <router-link class="lateral-menu-link" to="/support" @click="closeMenu()">
         Soporte técnico
       </router-link>
     </li>

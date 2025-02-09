@@ -21,7 +21,7 @@ store.handleUserData(token);
     <div v-if="logged" class="presentation">
       <span>¡Hola <h1>{{ username }}!</h1></span>
       <div>
-        <img :src="profilePic"  width="150" alt="">
+        <img class="profile-pic" :src="profilePic"  width="150" alt="">
       </div>
       <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para ti.</p>
     </div>

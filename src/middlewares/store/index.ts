@@ -36,8 +36,9 @@ export const useStore = defineStore('store', {
     },
     async handleUserData(token: any) {
       try {
-        this.currentUser = await getUserData(token);
+        setUserToken(token);
         this.userToken = token;
+        this.currentUser = await getUserData(token);
       } catch (error) {
         localStorage.clear();
         console.error(error);

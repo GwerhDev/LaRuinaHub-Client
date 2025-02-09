@@ -46,3 +46,7 @@ section {
   border: none;
   outline: solid 3px var(--primary-color);
 }
+
+.welcome-message {
+  text-wrap: nowrap;
+}

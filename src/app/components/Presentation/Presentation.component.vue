@@ -18,10 +18,10 @@ let profilePic: any = computed(() => currentUser.value.userData?.profilePic ?? d
 <template>
   <section>
     <div v-if="logged" class="presentation">
-      <span>¡Hola <h1>{{ username }}!</h1></span>
       <div>
         <img class="profile-pic" :src="profilePic" width="150" alt="">
       </div>
+      <span class="welcome-message"><h1>¡Hola, {{ username }}!</h1></span>
       <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para
         ti.</p>
     </div>

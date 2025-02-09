@@ -4,6 +4,7 @@ import appIcon from "../../../assets/svg/appstab-icon.svg";
 import secureUserIcon from "../../../assets/svg/user-shield-icon.svg";
 import supportIcon from "../../../assets/svg/support-icon.svg";
 import LogoHeader from "../Logo/LogoHeader.component.vue";
+import defaultImage from '../../../assets/svg/user-icon.svg';
 import { useStore } from '../../../middlewares/store';
 
 const store = useStore();
@@ -13,16 +14,18 @@ const logged: any = computed(() => currentUser.value.logged);
 </script>
 
 <template>
-  <div v-if="logged" class="presentation">
-    <span>¡Hola <h1>{{ currentUser?.name }}!</h1></span>
-    <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para ti.</p>
-  </div>
-  <div class="presentation" v-else>
-    <LogoHeader />
-    <p>¡Hola! Bienvenido a la plataforma de administración de "La Ruina". Aquí encontrarás:</p>
-  </div>
-
   <section>
+    <div v-if="logged" class="presentation">
+      <div>
+        <img :src="currentUser.username || defaultImage"  width="150" alt="">
+      </div>
+      <span>¡Hola <h1>{{ currentUser?.username }}!</h1></span>
+      <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Google sea más relevante para ti.</p>
+    </div>
+    <div class="presentation" v-else>
+      <LogoHeader />
+      <p>¡Hola! Bienvenido a la plataforma de administración de "La Ruina". Aquí encontrarás:</p>
+    </div>
     <LogoHeader v-if="logged" />
     <div class="services">
       <div class="section">

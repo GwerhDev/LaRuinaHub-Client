@@ -65,7 +65,7 @@ function logout() {
 <template>
   <div class="form-container">
     <div class="profile-pic-container">
-      <img class="profile-pic" :src="profilePic" alt="" width="300">
+      <img class="profile-pic" :src="profilePic" alt="" width="150">
     </div>
     <input v-if="editActive" @input="handleFileUpload" type="file" />
     <h2>Datos del usuario</h2>
